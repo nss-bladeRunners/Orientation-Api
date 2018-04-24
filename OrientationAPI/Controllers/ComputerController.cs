@@ -33,5 +33,19 @@ namespace OrientationAPI.Controllers
             }
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Customer could not be created, please try again later.");
         }
+
+        [Route("{computerId}"), HttpPatch]
+        public HttpResponseMessage UpdateCustomer(Computer computer, int computerId)
+        {
+            computer.ComputerId = computerId;
+            var repository = new ComputerRepository();
+            var result = repository.Update(computer);
+
+            if (result)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not update computer information, please try again later.");
+        }
     }
 }

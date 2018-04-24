@@ -46,6 +46,22 @@ namespace OrientationAPI.Services
             }
         }
 
+        public bool Update(Computer computer)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+
+                var updateComputer = db.Execute(@"UPDATE [dbo].[Computers]
+                                                SET [Manufacturer] = @Manufacturer,
+                                                    [Make] = @Make,
+                                                    [PurchaseDate] = @PurchaseDate
+                                                WHERE ComputerId = @ComputerId", computer);
+
+                return updateComputer == 1;
+            }
+        }
+
         
     }
 }
