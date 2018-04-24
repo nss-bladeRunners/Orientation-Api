@@ -20,5 +20,18 @@ namespace OrientationAPI.Controllers
             var dbResults = repo.GetAll();
             return Request.CreateListRecordsResponse(dbResults);
         }
+
+        [Route(""), HttpPost]
+        public HttpResponseMessage AddComputer(Computer computer)
+        {
+            var repository = new ComputerRepository();
+            var result = repository.Create(computer);
+
+            if (result)
+            {
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Customer could not be created, please try again later.");
+        }
     }
 }

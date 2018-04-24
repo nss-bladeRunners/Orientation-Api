@@ -26,5 +26,26 @@ namespace OrientationAPI.Services
                 return db.Query<Computer>(result).ToList();
             }
         }
+
+        public bool Create(Computer computer)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+
+                var numberCreated = db.Execute(@"INSERT INTO [dbo].[Computers]
+                                                    ([Manufacturer],
+                                                    [Make],
+                                                    [PurchaseDate])
+                                                 VALUES
+                                                    (@Manufacturer,
+                                                     @Make,
+                                                     @PurchaseDate)", computer);
+                return numberCreated == 1;
+                                                
+            }
+        }
+
+        
     }
 }

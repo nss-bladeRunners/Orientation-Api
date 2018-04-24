@@ -73,7 +73,7 @@ namespace OrientationAPI.Services
             return message.MapHttpResponse(DbResponseEnum.ValidationError);             
         }
 
-        //List response
+        //List Response Not Found
         public static HttpResponseMessage CreateListRecordsResponse<T>(this HttpRequestMessage message, IEnumerable<T> dbResult)
         {
             return dbResult.Count() >= 1 ? message.MapHttpResponse(DbResponseEnum.RecordsReturned, dbResult) : message.MapHttpResponse(DbResponseEnum.NotFound);

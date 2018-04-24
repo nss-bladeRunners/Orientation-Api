@@ -10,6 +10,6 @@ namespace OrientationAPI.Models
         public int ComputerId {get; set;}
         public string Manufacturer {get; set;}
         public string Make {get; set;}
-        public DateTime Date {get; set;}
+        public DateTime PurchaseDate {get; set;}
     }
 }
