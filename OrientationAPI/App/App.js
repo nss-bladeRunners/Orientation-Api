@@ -6,5 +6,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/home.html",
             controller: "HomeController"
         })
+
+        .when("/Computers", {
+            templateUrl: "/app/partials/Computers.html",
+            controller: "ComputerViewCtrl"
+        })
+
         .otherwise('/');
 }]);

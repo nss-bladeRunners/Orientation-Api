@@ -13,12 +13,12 @@ namespace OrientationAPI.Controllers
     [RoutePrefix("api/computers")]
     public class ComputerController : ApiController
     {
-        [HttpGet, Route("")]
+        [Route(""), HttpGet]
         public HttpResponseMessage ListComputers()
         {
             var repo = new ComputerRepository();
-            var dbResults = repo.GetAll();
-            return Request.CreateListRecordsResponse(dbResults);
+            List<Computer> computers = repo.GetAll();
+            return Request.CreateResponse(HttpStatusCode.OK, computers);
         }
 
         [Route(""), HttpPost]

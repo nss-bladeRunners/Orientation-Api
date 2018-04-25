@@ -17,13 +17,13 @@ namespace OrientationAPI.Services
             return new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString);
         }
 
-        public IEnumerable<Computer> GetAll()
+        public List<Computer> GetAll()
         {
             using (var db = GetDb())
             {
                 db.Open();
-                var result = "SELECT * From dbo.Computers";
-                return db.Query<Computer>(result).ToList();
+                var result = db.Query<Computer>("SELECT * From dbo.Computers").ToList();
+                return result;
             }
         }
 
