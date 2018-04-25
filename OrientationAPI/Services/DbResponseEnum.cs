@@ -12,6 +12,7 @@ namespace OrientationAPI.Services
         RecordsReturned,
         Updated,
         NotFound,
-        ValidationError
+        ValidationError,
+		Success
     }
 }

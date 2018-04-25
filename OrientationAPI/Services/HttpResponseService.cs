@@ -29,28 +29,12 @@ namespace OrientationAPI.Services
             }
               
         }
-        //Customer List
-        private static HttpResponseMessage MapHttpResponse<T>(this HttpRequestMessage message, DbResponseEnum dbResponse, IEnumerable<T> results)
+        private static HttpResponseMessage MapHttpResponse<T>(this HttpRequestMessage message, DbResponseEnum dbResponse, IEnumerable<T> records)
         {
             switch (dbResponse)
             {
                 case DbResponseEnum.RecordsReturned:
-                    return message.CreateResponse(HttpStatusCode.OK, results);
-                case DbResponseEnum.NotFound:
-                    return message.CreateErrorResponse(HttpStatusCode.NotFound, "No records found");
-                default:
-                    return message.CreateErrorResponse(HttpStatusCode.InternalServerError, "Not sure how we got here");
-            }
-
-        }
-
-        //Order List
-        private static HttpResponseMessage MapHttpResponse(this HttpRequestMessage message, DbResponseEnum dbResponse, IEnumerable<Order> customers)
-        {
-            switch (dbResponse)
-            {
-                case DbResponseEnum.RecordsReturned:
-                    return message.CreateResponse(HttpStatusCode.OK, customers);
+                    return message.CreateResponse(HttpStatusCode.OK, records);
                 case DbResponseEnum.NotFound:
                     return message.CreateErrorResponse(HttpStatusCode.NotFound, "No records found");
                 default:

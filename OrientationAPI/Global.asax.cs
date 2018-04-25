@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using OrientationApi;
+using OrientationAPI.App_Start;
 using System.Web.Http;
+using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace OrientationAPI
@@ -12,6 +11,8 @@ namespace OrientationAPI
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

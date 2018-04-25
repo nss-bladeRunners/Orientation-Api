@@ -79,5 +79,31 @@ namespace OrientationAPI.Services
                 return db.Query<Order>(sql, new { timeThresholdInDays });
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public int GetIsClosedStatus(int OrderId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+                var sql = @"Select isClosed FROM [dbo].[Orders]
+                            WHERE OrderId = @orderId";
+                return db.QueryFirst<int>(sql, new { OrderId });
+            }
+        }
     }
 }

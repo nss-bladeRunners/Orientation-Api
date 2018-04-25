@@ -16,13 +16,8 @@ namespace OrientationAPI.Controllers
 		public HttpResponseMessage AddCustomer(CustomerDto customer)
 		{
 			var repository = new CustomerRepository();
-			var result = repository.Create(customer);
-
-			if (result)
-			{
-				return Request.CreateResponse(HttpStatusCode.Created);
-			}
-			return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Customer could not be created, please try again later.");
+			var dbResult = repository.Create(customer);
+			return Request.CreateAddRecordResponse(dbResult); 
 		}
 	        [HttpGet, Route("")]
         public HttpResponseMessage ListCustomers()
@@ -36,14 +31,8 @@ namespace OrientationAPI.Controllers
 		{
 			customer.CustomerId = customerId;
 			var repository = new CustomerRepository();
-			var result = repository.Update(customer);
-
-			if (result)
-			{
-				return Request.CreateResponse(HttpStatusCode.OK);
-			}
-			return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not update customer information, please try again later.");
-
+			var dbResults = repository.Update(customer);
+			return Request.CreateUpdateRecordResponse(dbResults);
 		}
 
 		[HttpPatch, Route("{customerId}/deactivate")]

@@ -9,12 +9,15 @@ namespace OrientationAPI.Services
     {
         Created,
         NotCreated,
-<<<<<<< HEAD:OrientationAPI/Services/DbResponseEnum.cs
         RecordsReturned,
-        NoRecordsFound
-=======
-        Success,
+<<<<<<< HEAD:OrientationAPI/Services/DbResponseEnum.cs
+        NoRecordsFound,
+        Updated,
         NotFound
->>>>>>> 926f113bbd6cba263d377caf6c85b5b7fe4b7ae7:OrientationAPI/Services/DbResponseMapper.cs
+=======
+        Updated,
+        NotFound,
+        ValidationError
+>>>>>>> master:OrientationAPI/Services/DbResponseEnum.cs
     }
 }
