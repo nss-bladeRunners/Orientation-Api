@@ -122,6 +122,7 @@
     <Content Include="App\Controllers\ComputerViewController.js" />
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\ComputersCreate.html" />
     <Content Include="App\Partials\Departments.html" />
     <Content Include="App\Partials\Employees.html" />
     <Content Include="App\Partials\Home.html" />

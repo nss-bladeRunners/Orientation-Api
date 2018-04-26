@@ -12,5 +12,10 @@ app.config(["$routeProvider", function ($routeProvider) {
             controller: "ComputerViewCtrl"
         })
 
+        .when("/Computers/Create", {
+            templateUrl: "/app/partials/ComputersCreate.html",
+            controller: "ComputerViewCtrl"
+        })
+
         .otherwise('/');
 }]);
