@@ -40,7 +40,6 @@ namespace OrientationAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Product could not be found. Please try again later");
-            
         }
 	}
 }

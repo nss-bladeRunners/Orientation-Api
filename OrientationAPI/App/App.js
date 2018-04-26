@@ -10,6 +10,11 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/Computers", {
             templateUrl: "/app/partials/Computers.html",
             controller: "ComputerViewCtrl"
+        })
+        .when("/employees", {
+            templateUrl: "/app/partials/Employees.html",
+            controller: "EmployeesController"
+        })
         
         .when("/Training",
         {

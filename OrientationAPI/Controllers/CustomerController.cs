@@ -19,14 +19,16 @@ namespace OrientationAPI.Controllers
 			var dbResult = repository.Create(customer);
 			return Request.CreateAddRecordResponse(dbResult); 
 		}
-	        [HttpGet, Route("")]
+
+	    [HttpGet, Route("")]
         public HttpResponseMessage ListCustomers()
         {
             var repo = new CustomerRepository();
             var dbResults = repo.GetAllActive();
             return Request.CreateListRecordsResponse(dbResults);
         }
-        		[Route("{customerId}"), HttpPatch]
+
+		[Route("{customerId}"), HttpPatch]
 		public HttpResponseMessage UpdateCustomer(Customer customer, int customerId)
 		{
 			customer.CustomerId = customerId;
