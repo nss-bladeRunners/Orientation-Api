@@ -19,15 +19,23 @@ namespace OrientationApi
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/moment").Include(
+                      "~/Scripts/moment*"));
+
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
+                //"~/Scripts/angular-datatables.js",
+                "~/Scripts/angular-moment.*",
                 "~/app/app.js")
-                .IncludeDirectory("~/app/controllers", "*.js", true)); 
+                .IncludeDirectory("~/app/controllers", "*.js", true)
+                .IncludeDirectory("~/app/services", "*.js", true)); 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      //"~/Content/angular-datatables.css",
                       "~/Content/site.css"));
+
         }
     }
 }

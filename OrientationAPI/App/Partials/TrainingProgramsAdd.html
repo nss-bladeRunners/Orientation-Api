@@ -1,0 +1,30 @@
+﻿<div ng-controller="TrainingProgramsController" id="program-add">
+    <h2>Add Training Program</h2>
+    <form name="newProgramForm" ng-submit="submitNewProgram()" novalidate>
+        <div class="modal-body">
+            <div class="form-group col-sm-6">
+                <input ng-model="program.Name" required type="input" class="form-control" id="inputName" aria-describedby="Name" placeholder="Name">
+            </div>
+            <div class="form-group col-sm-6">
+                <input ng-model="program.Description" required type="input" class="form-control" id="inputDescription" aria-describedby="description"
+                       placeholder="Description">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="inputStartDate">Start Date</label>
+                <input ng-model="program.StartDate" required type="date" class="form-control" id="inputStartDate" aria-describedby="startDate" placeholder="Start Date">
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="inputEndDate">End Date</label>
+                <input ng-model="program.EndDate" required type="date" class="form-control" id="InputEndDate" aria-describedby="EndDate" placeholder="End Date">
+            </div>
+            <div class="form-group col-sm-4">
+                <input ng-model="program.MaxAttendees" required type="input" class="form-control" id="inputSourceLink" aria-describedby="MaxAttendees" placeholder="Max Attendees">
+            </div>
+            <div class="btn-block">
+                <button ng-disabled="newProgramForm.$invalid" class="btn btn-primary save-btn">Save</button>
+                <button type="button" class="btn btn-warning" ng-click="navigateToList()">Cancel</button>
+            </div>
+        </div>
+
+    </form>
+</div>
