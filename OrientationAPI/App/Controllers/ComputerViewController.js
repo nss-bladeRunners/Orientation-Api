@@ -1,5 +1,5 @@
-﻿app.controller("ComputerViewCtrl", ["$scope", "$http",
-    function ($scope, $http, $location) {
+﻿app.controller("ComputerViewCtrl", ["$scope", "$http", "$location", "ComputerService",
+    function ($scope, $http, $location, ComputerService) {
 
         $http.get("/api/computers").then(function (result) {
             $scope.computers = result.data;
@@ -11,8 +11,12 @@
 
         $scope.newComputer = {};
 
-        $scope.createComputerAndClose = (newComputer) => {
-            let c = $http.post("/api/computers/")
+        $scope.addComputerAndClose = function () {
+            ComputerService.addComputer($scope.newComputer).then(function (results) {
+                console.log(results);
+            }).catch(function (err) {
+                console.log("error in addComputer in view controller");
+            })
         }
 
     }
