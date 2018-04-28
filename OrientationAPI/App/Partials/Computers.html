@@ -16,7 +16,7 @@
         </thead>
 
         <tbody>
-            <tr ng-repeat="computer in computers" >
+            <tr ng-repeat="computer in computers | orderBy:'-PurchaseDate'" >
                 <td><a href="" ng-click="selectComputer(computer.ComputerId)">{{computer.ComputerId}}</a></td>
                 <td>{{computer.PurchaseDate | date:'MM/dd/yyyy'}}</td>
                 <td>{{computer.Manufacturer}}</td>

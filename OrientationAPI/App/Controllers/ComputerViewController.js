@@ -13,11 +13,25 @@
 
         $scope.addComputerAndClose = function () {
             ComputerService.addComputer($scope.newComputer).then(function (results) {
-                console.log(results);
+                $location.url(`Computers`);
             }).catch(function (err) {
                 console.log("error in addComputer in view controller");
             })
         }
+
+        const computerDetailView = () => {
+            $location.url(`/Computers/Detail`);
+        };
+
+        $scope.computerDetail = {};
+
+        $scope.selectComputer = (computerId) => {
+            ComputerService.getComputerById(computerId).then((results) => {
+                $scope.computerDetail = results.data;
+                $location.url(`/Computers/Detail/${computerId}`);
+            })
+
+        };
 
     }
 ]);

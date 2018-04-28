@@ -31,6 +31,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/TrainingProgramsAdd.html"
         })
 
+        .when("/Computers/Detail/:computerId", {
+            templateUrl: "/app/partials/ComputerDetail.html",
+            controller: "ComputerViewCtrl"
+        })
+
 
         .otherwise('/');
 }]);

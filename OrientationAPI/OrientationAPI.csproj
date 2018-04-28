@@ -119,6 +119,7 @@
     <Content Include="App\Controllers\EmployeesController.js" />
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\TrainingProgramsController.js" />
+    <Content Include="App\Partials\ComputerDetail.html" />
     <Content Include="App\Partials\Computers.html" />
     <Content Include="App\Partials\ComputersCreate.html" />
     <Content Include="App\Partials\Departments.html" />

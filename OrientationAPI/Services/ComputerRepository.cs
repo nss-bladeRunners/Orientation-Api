@@ -62,6 +62,20 @@ namespace OrientationAPI.Services
             }
         }
 
-        
+        public Computer GetComputer(int computerId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+                var computer = db.QueryFirst<Computer>(@"SELECT * FROM Computers WHERE ComputerId = @computerId", new
+                {
+                    computerId
+                });
+
+                return computer;
+            }
+        }
+
+
     }
 }

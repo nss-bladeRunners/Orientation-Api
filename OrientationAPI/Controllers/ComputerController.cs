@@ -35,7 +35,7 @@ namespace OrientationAPI.Controllers
         }
 
         [Route("{computerId}"), HttpPatch]
-        public HttpResponseMessage UpdateCustomer(Computer computer, int computerId)
+        public HttpResponseMessage UpdateComputer(Computer computer, int computerId)
         {
             computer.ComputerId = computerId;
             var repository = new ComputerRepository();
@@ -46,6 +46,15 @@ namespace OrientationAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not update computer information, please try again later.");
+        }
+
+        [Route("{computerId}"), HttpGet]
+        public HttpResponseMessage GetCompuerById (int computerId)
+        {
+            var repo = new ComputerRepository();
+            var result = repo.GetComputer(computerId);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
     }
 }
