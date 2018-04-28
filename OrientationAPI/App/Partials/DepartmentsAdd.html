@@ -1,0 +1,14 @@
+﻿<div ng-controller="DepartmentController" id="department-add">
+    <h2>Add Department</h2>
+    <form name="newDepartmentForm" ng-submit="submitNewDepartment()" novalidate>
+        <div class="modal-body">
+            <div class="form-group col-sm-6">
+                <input ng-model="department.Name" required type="text" class="form-control" id="inputName" aria-describedby="Name" placeholder="Name">
+            </div>
+            <div class="btn-block">
+                <button ng-disabled="newDepartmentForm.$invalid" class="btn btn-primary save-btn">Save</button>
+                <button type="button" class="btn btn-warning" ng-click="navigateToDepartmentList()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

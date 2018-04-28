@@ -115,8 +115,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\App.js" />
+<<<<<<< HEAD
     <Content Include="App\Controllers\ComputerViewController.js" />
+=======
     <Content Include="App\Controllers\DepartmentController.js" />
+>>>>>>> master
     <Content Include="App\Controllers\EmployeesController.js" />
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\TrainingProgramsController.js" />
@@ -129,8 +132,11 @@
     <Content Include="App\Partials\Home.html" />
     <Content Include="App\Partials\Nav.html" />
     <Content Include="App\Partials\TrainingPrograms.html" />
+<<<<<<< HEAD
     <Content Include="App\Services\ComputerService.js" />
+=======
     <Content Include="App\Services\DepartmentService.js" />
+>>>>>>> master
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -197,8 +203,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\ComputerController.cs" />
+=======
     <Compile Include="Controllers\DepartmentController.cs" />
+>>>>>>> master
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LineItemsController.cs" />
@@ -209,8 +218,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\Computer.cs" />
+=======
     <Compile Include="Models\DepartmentDto.cs" />
+>>>>>>> master
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\LineItemDto.cs" />
     <Compile Include="Models\Order.cs" />
@@ -220,8 +232,11 @@
     <Compile Include="Models\ProductDto.cs" />
     <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Services\ComputerRepository.cs" />
+=======
     <Compile Include="Services\DepartmentRepository.cs" />
+>>>>>>> master
     <Compile Include="Services\DbResponseEnum.cs" />
     <Compile Include="Models\EmployeeDto.cs" />
     <Compile Include="Services\EmployeeRepository.cs" />

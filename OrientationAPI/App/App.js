@@ -30,6 +30,16 @@ app.config(["$routeProvider", function ($routeProvider) {
         {
             templateUrl: "/app/partials/TrainingProgramsAdd.html"
         })
+        .when("/Departments",
+        {
+            templateUrl: "/app/partials/Departments.html",
+            controller: "DepartmentController"
+        })
+        .when("/DepartmentsAdd",
+        {
+            templateUrl: "/app/partials/DepartmentsAdd.html",
+            controller: "DepartmentController"
+        })
 
         .when("/Computers/Detail/:computerId", {
             templateUrl: "/app/partials/ComputerDetail.html",

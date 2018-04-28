@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 ﻿<div>
+
     <h2>Computers</h2>
 
     <a ng-href="#!/Computers/Create" ng-click="createComputerView()">Add New Computer</a>
@@ -26,3 +28,6 @@
     </table>
 
 </div>
+=======
+﻿
+>>>>>>> master
