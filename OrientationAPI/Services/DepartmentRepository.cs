@@ -28,6 +28,20 @@ namespace OrientationAPI.Services
             }
         }
 
+        public IEnumerable<DepartmentDto> ListDepartmentEmployees()
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+
+                var getDepartmentEmployees = db.Query<DepartmentDto>(@"SELECT Departments.Name, Employees.FirstName + ' ' + Employees.LastName
+                                                                        FROM Departments
+                                                                        JOIN Employees ON Departments.DepartmentId=Employees.EmployeeId;");
+
+                return getDepartmentEmployees;
+            }
+        }
+
         public int AddNewDepartment(DepartmentDto department)
         {
             using (var db = GetDb())
