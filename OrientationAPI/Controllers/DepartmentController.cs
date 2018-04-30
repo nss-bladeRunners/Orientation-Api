@@ -20,6 +20,14 @@ namespace OrientationAPI.Controllers
             return Request.CreateListRecordsResponse(result);
         }
 
+        [HttpGet, Route]
+        public HttpResponseMessage ListDepartmentEmployees()
+        {
+            var repository = new DepartmentRepository();
+            var result = repository.ListDepartmentEmployees();
+            return Request.CreateListRecordsResponse(result);
+        }
+
         [Route, HttpPost]
         public HttpResponseMessage AddNewDepartment(DepartmentDto department)
         {
