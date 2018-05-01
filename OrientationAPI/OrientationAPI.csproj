@@ -122,6 +122,7 @@
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
     <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\DepartmentEmployees.html" />
     <Content Include="App\Partials\Departments.html" />
     <Content Include="App\Partials\DepartmentsAdd.html" />
     <Content Include="App\Partials\Employees.html" />
@@ -263,6 +264,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\Partials\Departments\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Department\" />
     <Folder Include="Views\Employee\" />

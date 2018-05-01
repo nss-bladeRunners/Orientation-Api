@@ -16,6 +16,16 @@
         });
     };
 
+    const getDepartmentById = function (departmentId) {
+        return $q((resolve, reject) => {
+            $http.get(`http://localhost:50482/api/departments/${departmentId}`).then(function (results) {
+                resolve(results.data);
+            }).catch(function (err) {
+                reject("error in getDepartmentId in Service", err);
+            });
+        });
+    };
+
     const addDepartment = function (department) {
         return $q((resolve, reject) => {
             $http.post(`http://localhost:50482/api/departments`, JSON.stringify(department)).then(function (results) {
@@ -25,5 +35,5 @@
             });
         });
     };
-    return { getAllDepartments, addDepartment };
+    return { getAllDepartments, addDepartment, getDepartmentById };
 });

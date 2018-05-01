@@ -32,6 +32,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/DepartmentsAdd.html",
             controller: "DepartmentController"
         })
+        .when("/DepartmentEmployees/:id",
+        {
+            templateUrl: "app/partials/DepartmentEmployees.html",
+            controller: "DepartmentController"
+        })
 
         .otherwise('/');
 }]);
