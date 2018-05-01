@@ -24,5 +24,15 @@
          });
      }
 
-     return { addComputer, getComputerById, updateComputerDetails };
+     const deleteComputer = (computerId) => {
+         return $q((resolve, reject) => {
+             $http.delete(`/api/computers/${computerId}`).then(function (results) {
+                 resolve(results);
+             }).catch(function (err) {
+                 reject("error in deleteComputer in Service", err);
+             });
+         });
+     }
+
+     return { addComputer, deleteComputer, getComputerById, updateComputerDetails };
 });

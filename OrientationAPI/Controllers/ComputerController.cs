@@ -48,6 +48,20 @@ namespace OrientationAPI.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not update computer information, please try again later.");
         }
 
+        [Route("{computerId}"), HttpDelete]
+        public HttpResponseMessage DeleteComputer(int computerId)
+        {
+            
+            var repository = new ComputerRepository();
+            var result = repository.Delete(computerId);
+
+            if (result)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not delete computer, please try again later.");
+        }
+
         [Route("{computerId}"), HttpGet]
         public HttpResponseMessage GetCompuerById (int computerId)
         {

@@ -62,6 +62,19 @@ namespace OrientationAPI.Services
             }
         }
 
+        public bool Delete(int ComputerId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+
+                var deleteComputer = db.Execute(@"DELETE FROM [dbo].[Computers]
+                                                WHERE ComputerId = @ComputerId", new {ComputerId});
+
+                return deleteComputer == 1;
+            }
+        }
+
         public Computer GetComputer(int computerId)
         {
             using (var db = GetDb())
