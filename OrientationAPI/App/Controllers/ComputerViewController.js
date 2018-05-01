@@ -20,18 +20,12 @@
         }
 
         const computerDetailView = () => {
-            $location.url(`/Computers/Detail`);
+            $location.url(`/Computers/Detail/${computer.ComputerId}`);
         };
 
         $scope.computerDetail = {};
 
-        $scope.selectComputer = (computerId) => {
-            ComputerService.getComputerById(computerId).then((results) => {
-                $scope.computerDetail = results.data;
-                $location.url(`/Computers/Detail/${computerId}`);
-            })
 
-        };
 
     }
 ]);

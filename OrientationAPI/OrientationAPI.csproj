@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\App.js" />
+    <Content Include="App\Controllers\ComputerDetailsController.js" />
     <Content Include="App\Controllers\ComputerViewController.js" />
     <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\EmployeesController.js" />

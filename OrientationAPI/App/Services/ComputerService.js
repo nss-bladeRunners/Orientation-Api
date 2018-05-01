@@ -1,7 +1,5 @@
 ﻿app.service("ComputerService", function ($http, $q) {
 
-    var computerDetails = null;
-
      var addComputer = function (newComputer) {
         return $q((resolve, reject) => {
             $http.post(`/api/computers`, newComputer).then(function (results) {
@@ -16,9 +14,15 @@
          return $http.get(`/api/computers/${computerId}`);
      };
 
-     const saveComputerDetails = (computer) => {
+     const updateComputerDetails = (computer) => {
+         return $q((resolve, reject) => {
+             $http.put(`/api/computers/${computer.ComputerId}`, computer).then(function (results) {
+                 resolve(results);
+             }).catch(function (err) {
+                 reject("error in updateComputerDetails in Service", err);
+             });
+         });
+     }
 
-     };
-
-     return { addComputer, getComputerById };
+     return { addComputer, getComputerById, updateComputerDetails };
 });

@@ -34,7 +34,7 @@ namespace OrientationAPI.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Customer could not be created, please try again later.");
         }
 
-        [Route("{computerId}"), HttpPatch]
+        [Route("{computerId}"), HttpPut]
         public HttpResponseMessage UpdateComputer(Computer computer, int computerId)
         {
             computer.ComputerId = computerId;

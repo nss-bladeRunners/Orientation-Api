@@ -43,7 +43,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         .when("/Computers/Detail/:computerId", {
             templateUrl: "/app/partials/ComputerDetail.html",
-            controller: "ComputerViewCtrl"
+            controller: "ComputerDetailCtrl"
         })
 
 
