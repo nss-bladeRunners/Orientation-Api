@@ -6,8 +6,9 @@
                 $scope.departments = results;
             }).catch(function (error) {
                 console.log("error in getDepartments", error);
-            });
+                });
         }();
+
 
         const addDepartment = function () {
             DepartmentService.addDepartment($scope.department).then(function (results) {
@@ -16,16 +17,6 @@
                 console.log("error in addDepartment in controller", err);
             });
         };
-
-        const getDepartmentById = function () {
-            DepartmentService.getDepartmentById($routeParams.id).then(function (results) {
-                console.log(results);
-
-            }).catch(function (err) {
-                console.log("error in getDepartmentById in controller", err);
-            });
-        };
-
 
 
         $scope.navigateToAdd = function () {
@@ -43,7 +34,7 @@
         };
 
         $scope.navigateToDetails = function (departmentId) {
-            $location.path('/DepartmentEmployees/${departmentId}');
+            $location.url(`/DepartmentEmployees/${departmentId}`);
         };
 
     }

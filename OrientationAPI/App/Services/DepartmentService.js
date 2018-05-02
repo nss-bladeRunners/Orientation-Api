@@ -16,14 +16,12 @@
         });
     };
 
+    const getEmployeesByDepartmentId = function (departmentId) {
+        return $http.get(`/api/departments/${departmentId}`);
+    };
+
     const getDepartmentById = function (departmentId) {
-        return $q((resolve, reject) => {
-            $http.get(`http://localhost:50482/api/departments/${departmentId}`).then(function (results) {
-                resolve(results.data);
-            }).catch(function (err) {
-                reject("error in getDepartmentId in Service", err);
-            });
-        });
+        return $http.get(`/api/departments/${departmentId}`);
     };
 
     const addDepartment = function (department) {
@@ -35,5 +33,5 @@
             });
         });
     };
-    return { getAllDepartments, addDepartment, getDepartmentById };
+    return { getAllDepartments, addDepartment, getEmployeesByDepartmentId, getDepartmentById };
 });

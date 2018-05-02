@@ -30,12 +30,12 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/DepartmentsAdd",
         {
             templateUrl: "/app/partials/DepartmentsAdd.html",
-            controller: "DepartmentController"
+            controller: "DetailController"
         })
-        .when("/DepartmentEmployees/:id",
+        .when("/DepartmentEmployees/:departmentId",
         {
-            templateUrl: "app/partials/DepartmentEmployees.html",
-            controller: "DepartmentController"
+            templateUrl: "/app/partials/DepartmentEmployees.html",
+            controller: "DetailController"
         })
 
         .otherwise('/');

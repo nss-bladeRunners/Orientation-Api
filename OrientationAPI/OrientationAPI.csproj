@@ -116,6 +116,7 @@
   <ItemGroup>
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\DepartmentController.js" />
+    <Content Include="App\Controllers\Departments\DetailController.js" />
     <Content Include="App\Controllers\EmployeesController.js" />
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\TrainingPrograms\EditController.js" />
@@ -267,6 +268,7 @@
     <Folder Include="App\Partials\Departments\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Department\" />
+    <Folder Include="Views\Details\" />
     <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>

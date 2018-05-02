@@ -36,11 +36,22 @@ namespace OrientationAPI.Services
                 db.Open();
 
                 var getDepartmentEmployees = db.Query<EmployeeDto>(@"SELECT * from Employees 
-                       join Departments on Departments.DepartmentID = Employees.DepartmentID
-                       where Employees.EmployeeId = Departments.DepartmentId;", new { departmentID });
+                       JOIN Departments on Departments.DepartmentID = Employees.DepartmentID
+                       WHERE Departments.DepartmentId = @departmentId", new { departmentID });
                 return getDepartmentEmployees;
             }
         }
+
+        public DepartmentDto GetDepartmentById(int departmentId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+                var sql = "Select * From dbo.Departments WHERE departmentId = @departmentId";
+                return db.QueryFirst<DepartmentDto>(sql, new { departmentId });
+            }
+        }
+
 
         public int AddNewDepartment(DepartmentDto department)
         {
