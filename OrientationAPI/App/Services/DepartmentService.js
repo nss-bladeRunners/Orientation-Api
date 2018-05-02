@@ -17,11 +17,11 @@
     };
 
     const getEmployeesByDepartmentId = function (departmentId) {
-        return $http.get(`/api/departments/${departmentId}`);
+        return $http.get(`/api/departments/${departmentId}/employees`);
     };
 
     const getDepartmentById = function (departmentId) {
-        return $http.get(`/api/departments/${departmentId}`);
+        return $http.get(`/api/departments/${departmentId}`)
     };
 
     const addDepartment = function (department) {
