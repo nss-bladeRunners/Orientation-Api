@@ -118,6 +118,7 @@
     <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\Employees\EmployeeAddController.js" />
     <Content Include="App\Controllers\Employees\EmployeeDetailsController.js" />
+    <Content Include="App\Controllers\Employees\EmployeeEditController.js" />
     <Content Include="App\Controllers\Employees\EmployeesController.js" />
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\ModalController.js" />
@@ -128,6 +129,7 @@
     <Content Include="App\Partials\TrainingPrograms\Delete.html" />
     <Content Include="App\Partials\Employees\CreateEmployee.html" />
     <Content Include="App\Partials\Departments.html" />
+    <Content Include="App\Partials\Employees\EditEmployee.html" />
     <Content Include="App\Partials\Employees\EmployeeDetails.html" />
     <Content Include="App\Partials\DepartmentsAdd.html" />
     <Content Include="App\Partials\Employees\Employees.html" />

@@ -1,7 +1,6 @@
-﻿<div ng-init="getEmployeeDetails()"></div>
-<div><h1>{{employee.FirstName}} {{employee.LastName}}</h1></div>
+﻿<div ng-controller="EmployeeEditController">
 
-<fieldset ng-disabled="formDisabled">
+    <fieldset ng-disabled="formDisabled">
     <div class="form-group col-sm-6">
         <label for="inputFirstName">First Name</label>
         <input ng-model="employee.FirstName" required type="input" class="form-control" id="inputFirstName" aria-describedby="FirstName">
@@ -18,24 +17,24 @@
         <label for="inputComputer">Computer</label>
         <input ng-model="employee.ComputerMake" required type="input" class="form-control" id="InputComputer" aria-describedby="Computer">
     </div>
-</fieldset>
+    </fieldset>
 
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Program Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="program in training">
+                <td>{{program.Name}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="">
+                        <button type="button" class="btn btn-secondary" ng-click="deleteEmployeeTraining(employee.EmployeeId)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Program Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="program in training">
-            <td>{{program.Name}}</td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="btn-block">
-    <button type="button" class="btn btn-warning" ng-click="navigateToEditEmployee()">Edit</button>
-    <button type="button" class="btn btn-primary" ng-click="backToEmployees()">Back</button>
 </div>

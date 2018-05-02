@@ -42,5 +42,14 @@ namespace OrientationAPI.Controllers
 			var result = repo.GetTraining(employeeId);
 			return Request.CreateListRecordsResponse(result);
 		}
+
+		[Route("{employeeId}"), HttpPut]
+		public HttpResponseMessage UpdateEmployee(Employee employee, int employeeId)
+		{
+			employee.EmployeeId = employeeId;
+			var repo = new EmployeeRepository();
+			var result = repo.UpdateEmployee(employee);
+			return Request.CreateUpdateRecordResponse(result);
+		}
 	}
 }

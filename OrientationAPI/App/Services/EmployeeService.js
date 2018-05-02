@@ -8,8 +8,18 @@
                 reject("error in addEmployee in Service", err);
             });
         });
-    }
+    };
 
-    return { addEmployee };
+    const updateEmployee = function (employee) {
+        return $q((resolve, reject) => {
+            $http.put(`http://localhost:50482/api/employees/${employee.EmployeeId}`, JSON.stringify(employee)).then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in updateEmployee in Service", err);
+            });
+        });
+    };
+
+    return { addEmployee, updateEmployee };
 
 });
