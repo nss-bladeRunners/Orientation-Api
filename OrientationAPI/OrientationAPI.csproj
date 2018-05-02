@@ -117,10 +117,13 @@
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\ComputerDetailsController.js" />
     <Content Include="App\Controllers\ComputerViewController.js" />
+    <Content Include="App\Controllers\DeleteComputerModal.js" />
     <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\EmployeesController.js" />
     <Content Include="App\Controllers\HomeController.js" />
+    <Content Include="App\Controllers\ModalController.js" />
     <Content Include="App\Controllers\TrainingProgramsController.js" />
+    <Content Include="App\Partials\ComputerDeleteModal.html" />
     <Content Include="App\Partials\ComputerDetail.html" />
     <Content Include="App\Partials\Computers.html" />
     <Content Include="App\Partials\ComputersCreate.html" />
@@ -275,6 +278,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

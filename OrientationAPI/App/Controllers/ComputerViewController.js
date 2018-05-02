@@ -1,6 +1,8 @@
 ﻿app.controller("ComputerViewCtrl", ["$scope", "$http", "$location", "ComputerService",
     function ($scope, $http, $location, ComputerService) {
 
+        $scope.formInputRequired = true;
+
         $http.get("/api/computers").then(function (result) {
             $scope.computers = result.data;
         });
@@ -19,13 +21,16 @@
             })
         }
 
+        $scope.navigateToList = function () {
+            $scope.formInputRequired = false;
+            $location.url(`Computers`);
+        };
+
         const computerDetailView = () => {
             $location.url(`/Computers/Detail/${computer.ComputerId}`);
         };
 
         $scope.computerDetail = {};
-
-
 
     }
 ]);

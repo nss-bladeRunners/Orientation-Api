@@ -5,7 +5,6 @@
             ComputerService.getComputerById($routeParams.computerId).then((results) => {
                 results.data.PurchaseDate = new Date(results.data.PurchaseDate);
                 $scope.computer = results.data;
-                console.log("computer:", results.data);
             });
         };
 
@@ -20,11 +19,17 @@
         };
 
         $scope.deleteComputer = (computerId) => {
+            $scope.alert = true;
             ComputerService.deleteComputer(computerId).then(function (results) {
-                $location.url(`/api/Computers`);
+                $location.url(`Computers`);
             }).catch(function (err) {
                     console.log("error in deleteComputer in controller");
                 })
+        };
+
+        $scope.navigateToList = function () {
+            $scope.formInputRequired = false;
+            $location.url(`Computers`);
         };
 
     }
