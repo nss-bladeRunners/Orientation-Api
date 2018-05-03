@@ -20,6 +20,16 @@
         });
     };
 
-    return { addEmployee, getAvailableTrainings };
+    var addEmployeeTraining = function (employeeId, trainingId) {
+        return $q((resolve, reject) => {
+            $http.post(`http://localhost:50482/api/employees/${employeeId}/addTraining/${trainingId}`).then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in addEmployeeTraining in Service", err);
+            });
+        });
+    };
+
+    return { addEmployee, getAvailableTrainings, addEmployeeTraining };
 
 });

@@ -1,6 +1,6 @@
 ﻿<div id="trainingPrograms-container" class="container-fluid">
     <div class="modal-header">
-        <h4 class="modal-title">Upoming Trainings</h4>
+        <h4 class="modal-title">Upcoming Trainings</h4>
     </div>
     <div class="modal-body">
         <p ng-if="programs.length == 0">No Upcoming Programs</p>
@@ -14,13 +14,13 @@
             </thead>
             <tbody>
                 <tr ng-repeat="program in programs">
-                    <td class="text-right"><input class="form-check-input" type="checkbox" id="{{program.ProgramId}}"></td>
+                    <td class="text-right"><input class="form-check-input" name="training-checkbox" type="checkbox" value="{{program.ProgramId}}"></td>
                     <td>{{program.Name}}</td>
                     <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
                 </tr>
             </tbody>
         </table>
         <button ng-click="$dismiss()" class="btn btn-secondary cancel-btn">Cancel</button>
-        <button ng-click="addTrainingPrograms()" class="btn btn-primary add-btn">Save</button>
+        <button ng-click="addSelectedTrainings()" class="btn btn-primary add-btn">Save</button>
     </div>
 </div>

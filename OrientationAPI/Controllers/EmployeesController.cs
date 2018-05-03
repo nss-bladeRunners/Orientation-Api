@@ -50,5 +50,13 @@ namespace OrientationAPI.Controllers
             var result = repo.GetAvailableTrainings(employeeId);
             return Request.CreateListRecordsResponse(result);
         }
+
+        [Route("{employeeId}/addTraining/{trainingId}"), HttpPost]
+        public HttpResponseMessage CreateEmployeeTraining(int employeeId, int trainingId)
+        {
+            var repo = new EmployeeRepository();
+            var result = repo.CreateEmployeeTraining(employeeId, trainingId);
+            return Request.CreateAddRecordResponse(result);
+        }
     }
 }

@@ -153,5 +153,20 @@ namespace OrientationAPI.Services
                 return db.Query<TrainingProgram>(sql, new { employeeId } ).ToList(); 
             }
         }
-	}
+
+        public int CreateEmployeeTraining(int employeeId, int trainingProgramId)
+        {
+            using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
+            {
+                db.Open();
+                var sql = @"INSERT INTO [dbo].[Employee_Training]
+                                   ([TrainingProgramId]
+                                   ,[EmployeeId])
+                             VALUES
+                                   (@trainingProgramId
+                                   ,@employeeId)";
+                return db.Execute(sql, new { employeeId, trainingProgramId });
+            }
+        }
+    }
 }

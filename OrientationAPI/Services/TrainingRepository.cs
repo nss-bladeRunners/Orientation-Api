@@ -86,5 +86,6 @@ namespace OrientationAPI.Services
                 return db.Query<Employee>(sql, new { employeeTrainingId }).ToList(); 
             }
         }
+
     }
 }
