@@ -129,5 +129,44 @@ namespace OrientationAPI.Services
 
 			}
 		}
-	}
+
+        public List<TrainingProgram> GetAvailableTrainings(int employeeId)
+        {
+            using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
+            {
+                db.Open();
+
+                var sql = @"WITH EmployeeTrainingCTE (ProgramId)  
+                            AS  
+                            (  
+                                SELECT distinct tp.ProgramId
+                                FROM TrainingPrograms tp  
+                                JOIN Employee_Training et on tp.ProgramId = et.TrainingProgramId
+	                            WHERE et.EmployeeId = @employeeId 
+                            ) 
+
+                            SELECT * 
+                            FROM TrainingPrograms 
+                            WHERE ProgramId NOT IN (SELECT ProgramId FROM EmployeeTrainingCTE) 
+                            AND StartDate > getDate();";
+
+                return db.Query<TrainingProgram>(sql, new { employeeId } ).ToList(); 
+            }
+        }
+
+        public int CreateEmployeeTraining(int employeeId, int trainingProgramId)
+        {
+            using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
+            {
+                db.Open();
+                var sql = @"INSERT INTO [dbo].[Employee_Training]
+                                   ([TrainingProgramId]
+                                   ,[EmployeeId])
+                             VALUES
+                                   (@trainingProgramId
+                                   ,@employeeId)";
+                return db.Execute(sql, new { employeeId, trainingProgramId });
+            }
+        }
+    }
 }

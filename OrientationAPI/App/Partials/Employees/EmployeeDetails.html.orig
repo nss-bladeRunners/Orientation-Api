@@ -18,8 +18,17 @@
         <label for="inputComputer">Computer</label>
         <input ng-model="employee.ComputerMake" required type="input" class="form-control" id="InputComputer" aria-describedby="Computer">
     </div>
+<<<<<<< HEAD
+    <div class="form-group col-sm-4">
+        <h2>Training Programs</h2>
         <button type="button" class="btn btn-primary" ng-click="launchModal('App/Partials/Employees/AddTraining.html','Employees/EmployeeDetailsController')"
                 ng-controller="ModalController">Add Training</button>
+        <ul ng-repeat="program in training">
+            <li>{{program.Name}}</li>
+        </ul>
+    </div>
+</fieldset>
+=======
 </fieldset>
 
 
@@ -41,3 +50,4 @@
     <button type="button" class="btn btn-warning" ng-click="navigateToEditEmployee()">Edit</button>
     <button type="button" class="btn btn-primary" ng-click="backToEmployees()">Back</button>
 </div>
+>>>>>>> master

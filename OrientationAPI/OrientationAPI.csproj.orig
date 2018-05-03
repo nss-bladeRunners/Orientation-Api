@@ -130,10 +130,13 @@
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
     <Content Include="App\Partials\Computers.html" />
+<<<<<<< HEAD
     <Content Include="App\Partials\Employees\AddTraining.html" />
+=======
     <Content Include="App\Partials\Departments\Detail.html" />
     <Content Include="App\Partials\ComputersCreate.html" />
     <Content Include="App\Partials\Departments\Index.html" />
+>>>>>>> master
     <Content Include="App\Partials\TrainingPrograms\Delete.html" />
     <Content Include="App\Partials\Employees\CreateEmployee.html" />
     <Content Include="App\Partials\Departments\Add.html" />
