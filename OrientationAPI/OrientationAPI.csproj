@@ -117,7 +117,6 @@
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\ComputerDetailsController.js" />
     <Content Include="App\Controllers\ComputerViewController.js" />
-    <Content Include="App\Controllers\DeleteComputerModal.js" />
     <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\Employees\EmployeeAddController.js" />
     <Content Include="App\Controllers\Employees\EmployeeDetailsController.js" />
@@ -126,7 +125,6 @@
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\ModalController.js" />
     <Content Include="App\Controllers\TrainingPrograms\EditController.js" />
-    <Content Include="App\Partials\ComputerDeleteModal.html" /> 
     <Content Include="App\Partials\ComputerDetail.html" />
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
