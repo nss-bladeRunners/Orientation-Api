@@ -115,6 +115,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\App.js" />
+    <Content Include="App\Controllers\ComputerDetailsController.js" />
+    <Content Include="App\Controllers\ComputerViewController.js" />
     <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\Employees\EmployeeAddController.js" />
     <Content Include="App\Controllers\Employees\EmployeeDetailsController.js" />
@@ -123,9 +125,11 @@
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\ModalController.js" />
     <Content Include="App\Controllers\TrainingPrograms\EditController.js" />
+    <Content Include="App\Partials\ComputerDetail.html" />
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
     <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\ComputersCreate.html" />
     <Content Include="App\Partials\TrainingPrograms\Delete.html" />
     <Content Include="App\Partials\Employees\CreateEmployee.html" />
     <Content Include="App\Partials\Departments.html" />
@@ -136,6 +140,7 @@
     <Content Include="App\Partials\Home.html" />
     <Content Include="App\Partials\Nav.html" />
     <Content Include="App\Partials\TrainingPrograms\Form.html" />
+    <Content Include="App\Services\ComputerService.js" />
     <Content Include="App\Services\EmployeeService.js" />
     <Content Include="App\Partials\TrainingPrograms\Index.html" />
     <Content Include="App\Services\DepartmentService.js" />
@@ -213,6 +218,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -224,6 +230,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\DepartmentDto.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\LineItemDto.cs" />
@@ -234,6 +241,7 @@
     <Compile Include="Models\ProductDto.cs" />
     <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ComputerRepository.cs" />
     <Compile Include="Services\DepartmentRepository.cs" />
     <Compile Include="Services\DbResponseEnum.cs" />
     <Compile Include="Models\EmployeeDto.cs" />
@@ -287,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
