@@ -64,6 +64,17 @@ namespace OrientationAPI.Services
             }
         }
 
+        internal int Delete(int programId)
+        {
+            using (var db = getDb())
+            {
+                db.Open();
+                var sql = @"DELETE FROM [dbo].[TrainingPrograms]
+                             WHERE ProgramId = @programId AND StartDate > GetDate()";
+                return db.Execute(sql, new { programId });
+            }
+        }
+
         public List<Employee> GetEmployeesByTrainingId(int employeeTrainingId)
         {
             using (var db = getDb())

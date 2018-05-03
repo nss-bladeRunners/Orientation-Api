@@ -58,9 +58,9 @@ namespace OrientationAPI.Services
             return message.MapHttpResponse(DbResponseEnum.ValidationError);             
         }
 
-        public static HttpResponseMessage CreateListRecordsResponse<T>(this HttpRequestMessage message, IEnumerable<T> dbResult)
+        public static HttpResponseMessage CreateListRecordsResponse<T>(this HttpRequestMessage message, List<T> dbResult)
         {
-            return dbResult.Count() >= 1 ? message.MapHttpResponse(DbResponseEnum.RecordsReturned, dbResult) : message.MapHttpResponse(DbResponseEnum.NotFound);
+            return (dbResult.Count >=0) ? message.MapHttpResponse(DbResponseEnum.RecordsReturned, dbResult) : message.MapHttpResponse(DbResponseEnum.NotFound);
         }
 
     }

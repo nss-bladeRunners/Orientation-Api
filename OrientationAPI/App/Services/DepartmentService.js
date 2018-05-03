@@ -24,7 +24,7 @@
                 reject("error in getEmployeesByDepartmentId in Service", err);
             });
         });
-    }
+    };
 
     const getDepartmentById = function (departmentId) {
         return $http.get(`/api/departments/${departmentId}`);

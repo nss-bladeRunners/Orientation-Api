@@ -1,4 +1,4 @@
-﻿var app = angular.module("OrientationAPI", ["ngRoute", "angularMoment"]);
+﻿var app = angular.module("OrientationAPI", ["ngRoute", "angularMoment", "ui.bootstrap"]);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/",
@@ -6,9 +6,26 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/home.html",
             controller: "HomeController"
         })
-        .when("/employees", {
-            templateUrl: "/app/partials/Employees.html",
+        .when("/employees",
+        {
+            templateUrl: "/app/partials/Employees/Employees.html",
             controller: "EmployeesController"
+        })
+        .when("/CreateEmployee",
+        {
+            templateUrl: "/app/partials/Employees/CreateEmployee.html",
+            controller: "EmployeeAddController"
+        })
+        .when("/employee-details/:id",
+        {
+            templateUrl: "/app/partials/Employees/EmployeeDetails.html",
+            controller: "EmployeeDetailsController"
+
+        })
+        .when("/employee-edit/:id",
+        {
+            templateUrl: "/app/partials/Employees/EditEmployee.html",
+            controller: "EmployeeEditController"
         })
         .when("/Training",
         {

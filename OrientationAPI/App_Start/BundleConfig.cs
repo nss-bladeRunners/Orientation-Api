@@ -27,14 +27,15 @@ namespace OrientationApi
                 "~/Scripts/angular-route.js",
                 //"~/Scripts/angular-datatables.js",
                 "~/Scripts/angular-moment.*",
+                "~/Scripts/angular-ui/ui-bootstrap-tpls.*",
                 "~/app/app.js")
                 .IncludeDirectory("~/app/controllers", "*.js", true)
-                .IncludeDirectory("~/app/services", "*.js", true)); 
+                .IncludeDirectory("~/app/services", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       //"~/Content/angular-datatables.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
 
         }
     }

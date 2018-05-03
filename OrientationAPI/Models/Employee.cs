@@ -12,6 +12,7 @@ namespace OrientationAPI.Services
 		public int ComputerId { get; set; }
 		public int TrainingProgramId { get; set; }
 		public string TrainingProgramName { get; set; }
-		public string Name { get; set; }
+		public string DepartmentName { get; set; }
+		public string ComputerMake { get; set; }
 	}
 }

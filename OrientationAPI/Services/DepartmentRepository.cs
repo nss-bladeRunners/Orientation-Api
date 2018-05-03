@@ -16,13 +16,13 @@ namespace OrientationAPI.Services
             return new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString);
         }
 
-        public IEnumerable<DepartmentDto> ListDepartment()
+        public List<DepartmentDto> ListDepartment()
         {
             using (var db = GetDb())
             {
                 db.Open();
                 var getAllDepartments = db.Query<DepartmentDto>(@"select * from dbo.Departments");
-                return getAllDepartments;
+                return getAllDepartments.ToList();
             }
         }
 

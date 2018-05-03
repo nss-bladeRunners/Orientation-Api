@@ -29,13 +29,13 @@ namespace OrientationAPI.Services
 			}
 		}
 
-		public IEnumerable<Customer> GetAllActive()
+		public List<Customer> GetAllActive()
 		{
 			using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
 			{
 				db.Open();
 				var sql = "Select * From dbo.Customers WHERE isActive = 1";
-				return db.Query<Customer>(sql);
+				return db.Query<Customer>(sql).ToList();
 			}
 		}
 

@@ -45,5 +45,18 @@
             });
         });
     }
-    return { getAllUpcomingPrograms, addTraining, getTrainingById, updateTraining };
+
+    var deleteTraining = function (programId) {
+        return $q((resolve, reject) => {
+            $http.delete(`http://localhost:50482/api/training/${programId}`).then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in deleteTraining in Service", err);
+            });
+        });
+    }
+
+
+
+    return { getAllUpcomingPrograms, addTraining, getTrainingById, updateTraining, deleteTraining };
 });

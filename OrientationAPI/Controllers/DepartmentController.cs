@@ -22,7 +22,7 @@ namespace OrientationAPI.Controllers
         {
             var repo = new DepartmentRepository();
             var dbResults = repo.GetEmployeesByDepartmentId(departmentId);
-            return Request.CreateListRecordsResponse(dbResults);
+            return Request.CreateResponse(HttpStatusCode.OK, dbResults);
         }
 
         [HttpGet, Route("{departmentId}")]

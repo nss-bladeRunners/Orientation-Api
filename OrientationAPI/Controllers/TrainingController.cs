@@ -43,6 +43,14 @@ namespace OrientationAPI.Controllers
             var dbResult = repo.Update(dto);
             return Request.CreateUpdateRecordResponse(dbResult);
         }
+
+        [HttpDelete, Route("{trainingId}")]
+        public HttpResponseMessage Delete(int trainingId)
+        {
+            var repo = new TrainingRepository();
+            var dbResult = repo.Delete(trainingId);
+            return Request.CreateUpdateRecordResponse(dbResult);
+        }
     }
 
 }
