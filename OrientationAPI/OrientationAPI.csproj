@@ -115,9 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\App.js" />
+    <Content Include="App\Controllers\Departments\DepartmentController.js" />
+    <Content Include="App\Controllers\Departments\DetailController.js" />
     <Content Include="App\Controllers\ComputerDetailsController.js" />
     <Content Include="App\Controllers\ComputerViewController.js" />
-    <Content Include="App\Controllers\DepartmentController.js" />
     <Content Include="App\Controllers\Employees\EmployeeAddController.js" />
     <Content Include="App\Controllers\Employees\EmployeeDetailsController.js" />
     <Content Include="App\Controllers\Employees\EmployeeEditController.js" />
@@ -130,13 +131,14 @@
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
     <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\Departments\Detail.html" />
     <Content Include="App\Partials\ComputersCreate.html" />
+    <Content Include="App\Partials\Departments\Index.html" />
     <Content Include="App\Partials\TrainingPrograms\Delete.html" />
     <Content Include="App\Partials\Employees\CreateEmployee.html" />
-    <Content Include="App\Partials\Departments.html" />
+    <Content Include="App\Partials\Departments\Add.html" />
     <Content Include="App\Partials\Employees\EditEmployee.html" />
     <Content Include="App\Partials\Employees\EmployeeDetails.html" />
-    <Content Include="App\Partials\DepartmentsAdd.html" />
     <Content Include="App\Partials\Employees\Employees.html" />
     <Content Include="App\Partials\Home.html" />
     <Content Include="App\Partials\Nav.html" />
@@ -289,6 +291,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Department\" />
+    <Folder Include="Views\Details\" />
     <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
