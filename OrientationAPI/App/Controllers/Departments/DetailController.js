@@ -3,8 +3,8 @@
 
     const getEmployeesByDepartmentId = function () {
         DepartmentService.getEmployeesByDepartmentId($routeParams.departmentId).then(function (results) {
-            $scope.employee = results.data;
-            console.log(results);
+            $scope.employee = results;
+            console.log("emp", results.FirstName);
         }).catch(function (err) {
             console.log("error in getEmployeesByDepartmentById in controller", err);
          });
@@ -13,12 +13,11 @@
     const getDepartmentById = function () {
         DepartmentService.getDepartmentById($routeParams.departmentId).then(function (results) {
             $scope.department = results.data;
-            console.log(results);
+            console.log("dept", results.data);
         }).catch(function (err) {
             console.log("error in getDepartmentById in controller", err);
         });
     }();
-
 
    }
 ]);

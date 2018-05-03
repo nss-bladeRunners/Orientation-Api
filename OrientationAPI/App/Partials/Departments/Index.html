@@ -1,4 +1,4 @@
-﻿<div ng-init="getDepartments()"></div>
+﻿<!--<div ng-init="getDepartments()"></div>-->
 <div id="departments-container" class="container-fluid">
     <h2>Departments</h2>
     <table id="department-table" class="table table-striped table-bordered" style="width:100%">
@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="department in departments" ng-click="navigateToDetails(department.DepartmentId)">
+            <tr ng-repeat="department in departments"  ng-click="navigateToDetails(department.DepartmentId, employee.EmployeeId)">
                 <td>{{department.Name}}</td>
 
             </tr>

@@ -24,17 +24,22 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/Departments",
         {
-            templateUrl: "/app/partials/Departments.html",
+            templateUrl: "/app/partials/Departments/Index.html",
             controller: "DepartmentController"
         })
         .when("/DepartmentsAdd",
         {
-            templateUrl: "/app/partials/DepartmentsAdd.html",
+            templateUrl: "/app/partials/Departments/Add.html",
             controller: "DetailController"
         })
         .when("/DepartmentEmployees/:departmentId",
         {
-            templateUrl: "/app/partials/DepartmentEmployees.html",
+            templateUrl: "/app/partials/Departments/Detail.html",
+            controller: "DetailController"
+        })
+        .when("/DepartmentEmployees/:departmentId/employees",
+        {
+            templateUrl: "/app/partials/Departments/Detail.html",
             controller: "DetailController"
         })
 

@@ -9,7 +9,6 @@
                 });
         }();
 
-
         const addDepartment = function () {
             DepartmentService.addDepartment($scope.department).then(function (results) {
                 console.log(results);
