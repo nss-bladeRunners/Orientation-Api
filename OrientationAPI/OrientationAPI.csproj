@@ -125,6 +125,7 @@
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\ModalController.js" />
     <Content Include="App\Controllers\TrainingPrograms\EditController.js" />
+    <Content Include="App\Partials\ComputerDeleteModal.html" />
     <Content Include="App\Partials\ComputerDetail.html" />
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />

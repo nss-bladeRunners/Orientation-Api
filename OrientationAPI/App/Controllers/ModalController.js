@@ -7,7 +7,7 @@
             var modalInstance = $uibModal.open({
                 templateUrl: template,
                 controller: controller,
-                scope: $scope,
+                scope: $scope
             });
 
             modalInstance.result.then(function (result) {

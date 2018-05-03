@@ -22,7 +22,10 @@
         <div class="row">
             <button ng-click="navigateToList()" class="btn btn-secondary col-md-1">Cancel</button>
             <button ng-click="updateComputer(computer)" class=" btn btn-success col-md-1">Save</button>
-            <button ng-click="deleteComputer(computer.ComputerId)" class="btn btn-danger col-md-2 offset-1">Delete Computer</button>
+            <button ng-click="launchModal('App/Partials/ComputerDeleteModal.html','ComputerDetailsController')" class="btn btn-danger col-md-2 offset-1">Delete Computer</button>
+
+
+            
 
         </div>
 

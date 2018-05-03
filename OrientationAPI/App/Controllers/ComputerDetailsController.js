@@ -29,6 +29,11 @@
 
         $scope.navigateToList = function () {
             $scope.formInputRequired = false;
+            $location.url(`/Computers/Detail/${computer.ComputerId}`);
+        };
+
+        $scope.navigateToDetail = function () {
+            $scope.formInputRequired = false;
             $location.url(`Computers`);
         };
 
