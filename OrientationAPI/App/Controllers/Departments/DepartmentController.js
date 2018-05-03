@@ -1,7 +1,6 @@
-﻿app.controller("DepartmentController", ["$scope", "$http", "$location", "DepartmentService",
-    function ($scope, $http, $location, DepartmentService) {
+﻿app.controller("DepartmentController", ["$scope", "$http", "$location", "$routeParams", "DepartmentService",
+    function ($scope, $http, $location, $routeParams, DepartmentService) {
 
-        //get upcoming project
         var getDepartments = function () {
             DepartmentService.getAllDepartments().then(function (results) {
                 $scope.departments = results;
@@ -20,7 +19,7 @@
 
         $scope.navigateToAdd = function () {
             var currentLocation = $location.path();
-            $location.path(`/DepartmentsAdd`);
+            $location.path(`/Departments/Add`);
         };
 
         $scope.navigateToDepartmentList = function () {
@@ -31,5 +30,10 @@
             addDepartment($scope.department);
             $location.path(`/Departments`);
         };
+
+        $scope.navigateToDetails = function (departmentId) {
+            $location.url(`/Departments/Detail/${departmentId}`);
+        };
+
     }
 ]);

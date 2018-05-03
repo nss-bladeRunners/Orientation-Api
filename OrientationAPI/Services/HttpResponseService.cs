@@ -29,7 +29,6 @@ namespace OrientationAPI.Services
             }
               
         }
-
         private static HttpResponseMessage MapHttpResponse<T>(this HttpRequestMessage message, DbResponseEnum dbResponse, IEnumerable<T> records)
         {
             switch (dbResponse)
@@ -58,9 +57,10 @@ namespace OrientationAPI.Services
             return message.MapHttpResponse(DbResponseEnum.ValidationError);             
         }
 
+        //List Response Not Found
         public static HttpResponseMessage CreateListRecordsResponse<T>(this HttpRequestMessage message, List<T> dbResult)
         {
-            return (dbResult.Count >=0) ? message.MapHttpResponse(DbResponseEnum.RecordsReturned, dbResult) : message.MapHttpResponse(DbResponseEnum.NotFound);
+            return (dbResult.Count >= 0) ? message.MapHttpResponse(DbResponseEnum.RecordsReturned, dbResult) : message.MapHttpResponse(DbResponseEnum.NotFound);
         }
 
     }
