@@ -21,10 +21,31 @@ namespace OrientationAPI.Services
             using (var db = GetDb())
             {
                 db.Open();
-
                 var getAllDepartments = db.Query<DepartmentDto>(@"select * from dbo.Departments");
-
                 return getAllDepartments.ToList();
+            }
+        }
+
+        public IEnumerable<EmployeeDto> GetEmployeesByDepartmentId(int departmentID)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+
+                var getDepartmentEmployees = db.Query<EmployeeDto>(@"SELECT * from Employees 
+                       JOIN Departments on Departments.DepartmentID = Employees.DepartmentID
+                       WHERE Departments.DepartmentId = @departmentId", new { departmentID });
+                return getDepartmentEmployees;
+            }
+        }
+
+        public DepartmentDto GetDepartmentById(int departmentId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+                var sql = "Select * From dbo.Departments WHERE departmentId = @departmentId";
+                return db.QueryFirst<DepartmentDto>(sql, new { departmentId });
             }
         }
 
@@ -35,11 +56,10 @@ namespace OrientationAPI.Services
                 db.Open();
 
                 var newDepartmentQuery = @"INSERT INTO dbo.Departments
-                            (name)
-                            VALUES 
-                            (@name)";
+                                            (name)
+                                            VALUES 
+                                            (@name)";
                 return db.Execute(newDepartmentQuery, department);
-
             }
         }
     }

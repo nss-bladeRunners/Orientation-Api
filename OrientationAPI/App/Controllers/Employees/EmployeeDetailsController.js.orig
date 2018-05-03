@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿app.controller("Employees/EmployeeDetailsController", ["$scope", "$http", "$location", "$route", "$routeParams", "EmployeeService",
     function ($scope, $http, $location, $route, $routeParams, EmployeeService) {
+=======
+﻿app.controller("EmployeeDetailsController", ["$scope", "$http", "$location", "$routeParams",
+    function ($scope, $http, $location, $routeParams) {
+>>>>>>> master
 
         $scope.header = "Employee Details";
 
@@ -12,7 +17,6 @@
             });
         };
 
-
         var getEmployeeTraining = function () {
             $http.get(`/api/employees/employee-details/${$routeParams.id}/training`).then(function (result) {
                 $scope.training = result.data;
@@ -24,6 +28,10 @@
         $scope.backToEmployees = function () {
             $location.path('/employees');
         }
+
+<<<<<<< HEAD
+
+
 
 
 
@@ -82,8 +90,12 @@
             return selectedTrainings;
         };
 
+        
+
+=======
         $scope.navigateToEditEmployee = function () {
             $location.path(`/employee-edit/${$routeParams.id}`);
         };
+>>>>>>> master
     }
 ]);
