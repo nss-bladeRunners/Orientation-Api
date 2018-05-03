@@ -26,30 +26,11 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Add Training Stuff 
 
 
         var getAvailableTrainings = function () {
             EmployeeService.getAvailableTrainings($routeParams.id).then(function (results) {
-                console.log(results);
                 $scope.programs = results;
             }).catch(function (err) {
                 console.log(err);
