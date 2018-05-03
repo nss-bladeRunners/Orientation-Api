@@ -19,7 +19,7 @@
 
         $scope.navigateToAdd = function () {
             var currentLocation = $location.path();
-            $location.path(`/DepartmentsAdd`);
+            $location.path(`/Departments/Add`);
         };
 
         $scope.navigateToDepartmentList = function () {
@@ -32,7 +32,7 @@
         };
 
         $scope.navigateToDetails = function (departmentId) {
-            $location.url(`/DepartmentEmployees/${departmentId}`);
+            $location.url(`/Departments/Detail/${departmentId}`);
         };
 
     }
