@@ -51,5 +51,14 @@ namespace OrientationAPI.Controllers
 			var result = repo.UpdateEmployee(employee);
 			return Request.CreateUpdateRecordResponse(result);
 		}
+
+		[Route("{employeeId}/computer"), HttpPut]
+		public HttpResponseMessage UpdateComputer(int computerId)
+		{
+			var repo = new EmployeeRepository();
+			var result = repo.UpdateComputer(computerId);
+			return Request.CreateUpdateRecordResponse(result);
+
+		}
 	}
 }
