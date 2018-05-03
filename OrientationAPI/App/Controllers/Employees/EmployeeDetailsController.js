@@ -1,5 +1,5 @@
-﻿app.controller("Employees/EmployeeDetailsController", ["$scope", "$http", "$location", "$route", "$routeParams", "EmployeeService",
-    function ($scope, $http, $location, $route, $routeParams, EmployeeService) {
+﻿app.controller("Employees/EmployeeDetailsController", ["$scope", "$http", "$location", "$q", "$route", "$routeParams", "EmployeeService",
+    function ($scope, $http, $location, $q, $route, $routeParams, EmployeeService) {
 
         $scope.header = "Employee Details";
 
@@ -37,23 +37,21 @@
             });
         }();
 
+        var selectedTrainingsPromises = function (selectedTrainings) {
+            selectedTrainings.forEach(function (trainingId) {
+                EmployeeService.addEmployeeTraining($routeParams.id, trainingId)
+            });
+        };
+
         $scope.addSelectedTrainings = function () {
             var selectedTrainings = getSelectedCheckboxes();
             if (selectedTrainings.length > 0) {
                 $scope.$dismiss();
-                selectedTrainings.forEach(function (trainingId) {
-                    EmployeeService.addEmployeeTraining($routeParams.id, trainingId).then(function (results) {
-                        if (results.status = 201) {
-                            $route.reload()
-                        }                                            
-                    }).catch(function (err) {
-                        console.log(err);
-                    });
+                $q.all(selectedTrainingsPromises(selectedTrainings)).then(function (result) {
+                    $route.reload();
                 });
             }
         };
-
-
 
         getSelectedCheckboxes = function () {
             var selectedTrainings = [];
