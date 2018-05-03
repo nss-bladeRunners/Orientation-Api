@@ -6,7 +6,7 @@
                 $scope.departments = results;
             }).catch(function (error) {
                 console.log("error in getDepartments", error);
-                });
+            });
         }();
 
         const addDepartment = function () {
@@ -16,7 +16,6 @@
                 console.log("error in addDepartment in controller", err);
             });
         };
-
 
         $scope.navigateToAdd = function () {
             var currentLocation = $location.path();

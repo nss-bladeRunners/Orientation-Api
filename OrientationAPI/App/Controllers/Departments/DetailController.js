@@ -4,11 +4,11 @@
     const getEmployeesByDepartmentId = function () {
         DepartmentService.getEmployeesByDepartmentId($routeParams.departmentId).then(function (results) {
             $scope.employee = results;
-            console.log("emp", results.FirstName);
+            console.log("emp", results);
         }).catch(function (err) {
             console.log("error in getEmployeesByDepartmentById in controller", err);
          });
-        }();
+     }();
 
     const getDepartmentById = function () {
         DepartmentService.getDepartmentById($routeParams.departmentId).then(function (results) {
