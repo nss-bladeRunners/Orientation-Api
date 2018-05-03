@@ -1,0 +1,10 @@
+﻿<div ng-controller="TrainingPrograms/AddController" id="program-add">
+    <h2>Add Training Program</h2>
+    <form name="newProgramForm" ng-submit="submitNewProgram()" novalidate>
+        <div ng-include="'App/Partials/TrainingPrograms/Form.html'"></div>
+        <div class="btn-block">
+            <button ng-disabled="newProgramForm.$invalid" class="btn btn-primary save-btn">Save</button>
+            <button type="button" class="btn btn-warning" ng-click="navigateToList()">Cancel</button>
+        </div>
+    </form>
+</div>

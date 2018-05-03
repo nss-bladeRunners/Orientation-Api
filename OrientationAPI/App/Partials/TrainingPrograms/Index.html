@@ -1,6 +1,7 @@
 ﻿<div id="trainingPrograms-container" class="container-fluid">
     <h2>Training Programs</h2>
-    <table id="training-programs-table" class="table table-striped table-bordered" style="width:100%">
+    <p ng-if="programs.length == 0">No Upcoming Programs</p>
+    <table ng-if="programs.length > 0" id="training-programs-table" class="table table-striped table-bordered table-hover" style="width:100%">
         <thead>
             <tr>
                 <th>Program Name</th>
@@ -11,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="program in programs">
+            <tr ng-click="navigateToDetail(program.ProgramId)" ng-repeat="program in programs">
                 <td>{{program.Name}}</td>
                 <td>{{program.Description}}</td>
                 <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
@@ -21,5 +22,4 @@
         </tbody>
     </table>
     <button ng-click="navigateToAdd()" class="btn btn-primary add-btn">Add Training Program</button>
-
 </div> 

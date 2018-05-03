@@ -1,0 +1,26 @@
+﻿<h2>{{header}}</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees">
+            <td>{{employee.FirstName}}</td>
+            <td>{{employee.LastName}}</td>
+            <td>{{employee.DepartmentName}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="">
+                    <button type="button" class="btn btn-secondary" ng-click="employeeDetails(employee.EmployeeId)">Details</button>
+                    <button type="button" class="btn btn-secondary">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button ng-click="navigateToCreateEmployee()" class="btn btn-primary add-btn">Add Employee</button>

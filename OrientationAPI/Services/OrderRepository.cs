@@ -68,7 +68,7 @@ namespace OrientationAPI.Services
             }
         }
 
-        public IEnumerable<Order> SelectOutstandingOrders(int timeThresholdInDays)
+        public List<Order> SelectOutstandingOrders(int timeThresholdInDays)
         {
             using (var db = GetDb())
             {
@@ -76,7 +76,7 @@ namespace OrientationAPI.Services
                 var sql = @"SELECT * FROM [dbo].[Orders]
                             WHERE IsClosed = 1
                             AND DATEDIFF(DAY, CreatedDate, getDate()) > @timeThresholdInDays";
-                return db.Query<Order>(sql, new { timeThresholdInDays });
+                return db.Query<Order>(sql, new { timeThresholdInDays }).ToList();
             }
         }
 

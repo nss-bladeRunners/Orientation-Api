@@ -15,6 +15,7 @@ textarea {
     max-width: 280px;
 }
 
+<<<<<<< HEAD
 
 .fade.in {
     opacity: 1;
@@ -30,3 +31,5 @@ textarea {
     filter: alpha(opacity=50);
     opacity: .5;
 }
+=======
+>>>>>>> master

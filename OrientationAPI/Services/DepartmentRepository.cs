@@ -16,7 +16,7 @@ namespace OrientationAPI.Services
             return new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString);
         }
 
-        public IEnumerable<DepartmentDto> ListDepartment()
+        public List<DepartmentDto> ListDepartment()
         {
             using (var db = GetDb())
             {
@@ -24,7 +24,7 @@ namespace OrientationAPI.Services
 
                 var getAllDepartments = db.Query<DepartmentDto>(@"select * from dbo.Departments");
 
-                return getAllDepartments;
+                return getAllDepartments.ToList();
             }
         }
 

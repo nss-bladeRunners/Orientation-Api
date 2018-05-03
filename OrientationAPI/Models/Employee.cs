@@ -2,7 +2,7 @@
 
 namespace OrientationAPI.Services
 {
-	public class Employees
+	public class Employee
 	{
 		public int EmployeeId { get; set; }
 		public string FirstName { get; set; }
@@ -12,6 +12,7 @@ namespace OrientationAPI.Services
 		public int ComputerId { get; set; }
 		public int TrainingProgramId { get; set; }
 		public string TrainingProgramName { get; set; }
-		public string Name { get; set; }
+		public string DepartmentName { get; set; }
+		public string ComputerMake { get; set; }
 	}
 }

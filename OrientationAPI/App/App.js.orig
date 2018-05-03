@@ -6,8 +6,18 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/home.html",
             controller: "HomeController"
         })
+<<<<<<< HEAD
 
-
+        .when("/Computers", {
+            templateUrl: "/app/partials/Computers.html",
+            controller: "ComputerViewCtrl"
+        })
+        .when("/employees", {
+            templateUrl: "/app/partials/Employees.html",
+            controller: "EmployeesController"
+        })
+        
+=======
         .when("/employees",
         {
             templateUrl: "/app/partials/Employees/Employees.html",
@@ -29,22 +39,28 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "/app/partials/Employees/EditEmployee.html",
             controller: "EmployeeEditController"
         })
-
-
+>>>>>>> master
         .when("/Training",
         {
             templateUrl: "/app/partials/trainingPrograms/index.html",
             controller: "TrainingPrograms/IndexController"
         })
+<<<<<<< HEAD
+
+        .when("/Computers/Create", {
+            templateUrl: "/app/partials/ComputersCreate.html",
+            controller: "ComputerViewCtrl"
+        })
+        .when("/TrainingAdd",
+=======
         .when("/Training/Add",
+>>>>>>> master
         {
             templateUrl: "/app/partials/trainingPrograms/add.html"
         })
         .when("/training/:id", {
             templateUrl: "/app/partials/trainingPrograms/edit.html"
         })
-
-
         .when("/Departments",
         {
             templateUrl: "/app/partials/Departments.html",
@@ -56,19 +72,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             controller: "DepartmentController"
         })
 
-        
-        .when("/Computers", {
-            templateUrl: "/app/partials/Computers.html",
-            controller: "ComputerViewCtrl"
-        })
-        .when("/Computers/Create", {
-            templateUrl: "/app/partials/ComputersCreate.html",
-            controller: "ComputerViewCtrl"
-        })
         .when("/Computers/Detail/:computerId", {
             templateUrl: "/app/partials/ComputerDetail.html",
             controller: "ComputerDetailCtrl"
         })
+
 
         .otherwise('/');
 }]);
