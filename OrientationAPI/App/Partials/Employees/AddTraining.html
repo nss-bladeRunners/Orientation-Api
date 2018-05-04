@@ -10,13 +10,15 @@
                     <th></th>
                     <th>Program Name</th>
                     <th>Start Date</th>
+                    <th>Open Seats</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="program in programs">
-                    <td class="text-right"><input class="form-check-input" name="training-checkbox" type="checkbox" value="{{program.ProgramId}}"></td>
+                    <td class="text-right"><input class="training-form-check-input form-check-input" name="training-checkbox" type="checkbox" value="{{program.ProgramId}}"></td>
                     <td>{{program.Name}}</td>
                     <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
+                    <td>{{program.RemainingSeats}} of {{program.MaxAttendees}}</td>
                 </tr>
             </tbody>
         </table>

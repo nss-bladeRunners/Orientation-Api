@@ -30,3 +30,7 @@ textarea {
     filter: alpha(opacity=50);
     opacity: .5;
 }
+
+.training-form-check-input {
+    margin-left: -7px; 
+}

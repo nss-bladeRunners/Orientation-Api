@@ -143,11 +143,23 @@ namespace OrientationAPI.Services
                                 FROM TrainingPrograms tp  
                                 JOIN Employee_Training et on tp.ProgramId = et.TrainingProgramId
 	                            WHERE et.EmployeeId = @employeeId 
-                            ) 
+                            ),
 
-                            SELECT * 
-                            FROM TrainingPrograms 
-                            WHERE ProgramId NOT IN (SELECT ProgramId FROM EmployeeTrainingCTE) 
+                            AttendeeCountCTE (ProgramId, AttendeeCount) AS 
+                            (
+	                            SELECT trainingProgramId, count(TrainingProgramId)
+	                            FROM Employee_Training
+	                            GROUP BY TrainingProgramId
+                            )
+
+                            SELECT tp.*
+                            FROM TrainingPrograms tp
+                            LEFT JOIN AttendeeCountCTE ac on tp.ProgramId = ac.ProgramId
+                            WHERE tp.ProgramId NOT IN (SELECT ProgramId FROM EmployeeTrainingCTE) 
+                            AND 
+                            (
+                                (tp.MaxAttendees - ISNULL(ac.AttendeeCount, 0)) > 0
+                            )
                             AND StartDate > getDate();";
 
                 return db.Query<TrainingProgram>(sql, new { employeeId } ).ToList(); 

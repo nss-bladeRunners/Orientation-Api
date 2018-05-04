@@ -33,7 +33,17 @@ namespace OrientationAPI.Services
             using (var db = getDb())
             {
                 db.Open();
-                var sql = "Select * From dbo.TrainingPrograms WHERE StartDate > GetDate()";
+                var sql = @"WITH AttendeeCountCTE (ProgramId, AttendeeCount) AS 
+                            (
+	                            SELECT trainingProgramId, count(TrainingProgramId)
+	                            FROM Employee_Training
+	                            GROUP BY TrainingProgramId
+                            )
+
+                            Select tp.*, ISNULL(ac.AttendeeCount, 0 ) AttendeeCount From dbo.TrainingPrograms tp
+                            LEFT JOIN AttendeeCountCTE ac on tp.ProgramId = ac.ProgramId
+                            WHERE StartDate > GetDate()";
+
                 return db.Query<TrainingProgram>(sql).ToList();
             }
         }
