@@ -34,3 +34,7 @@ textarea {
 .training-form-check-input {
     margin-left: -7px; 
 }
+
+.training-programs-row {
+    cursor:pointer; 
+}
