@@ -70,5 +70,13 @@ namespace OrientationAPI.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
-    }
+
+		[Route("unassigned"), HttpGet]
+		public HttpResponseMessage GetUnassignedComputers()
+		{
+			var repo = new EmployeeRepository();
+			var result = repo.GetUnassignedComputers();
+			return Request.CreateListRecordsResponse(result);
+		}
+	}
 }

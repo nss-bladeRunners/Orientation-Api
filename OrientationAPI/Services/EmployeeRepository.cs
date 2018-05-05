@@ -60,15 +60,25 @@ namespace OrientationAPI.Services
 			}
 		}
 
-		public int UpdateComputer(Employee employee, int computerId)
+		public int UpdateComputer(int employeeId, int computerId)
 		{
 			using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
 			{
 				db.Open();
 
-				return db.Execute(@"UPDATE[dbo].[Employee_Computers]
-												SET [ComputerId] = @ComputerId
-												WHERE EmployeeId = @EmployeeId", employee);
+				return db.Execute(@"INSERT INTO [dbo].[Employee_Computers]
+												(
+													EmployeeId,
+													ComputerId,
+													AssignedDate
+													
+												)
+												Values 
+												(
+													@EmployeeId,
+													@ComputerId,
+													getDate()
+												)" , new { computerId, employeeId });
 
 			}
 		}
@@ -129,5 +139,34 @@ namespace OrientationAPI.Services
 
 			}
 		}
+
+		public List<Computer>GetUnassignedComputers()
+		{
+			using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
+			{
+				db.Open();
+
+
+				return db.Query<Computer>(@"select * 
+											from computers c
+											left join Employee_Computers e
+											on c.ComputerId = e.ComputerId
+											where e.EmployeeId is null").ToList();
+			}
+		}
+
+		internal int DeleteComputer(int computerId)
+		{
+			using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
+			{
+				db.Open();
+
+				var sql = @"DELETE FROM [dbo].[Computers]
+                             WHERE computerId = @ComputerId";
+				return db.Execute(sql, new { computerId });
+			}
+		}
+
+	
 	}
 }

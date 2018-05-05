@@ -51,6 +51,7 @@ namespace OrientationAPI.Controllers
             var dbResult = repo.Delete(trainingId);
             return Request.CreateUpdateRecordResponse(dbResult);
         }
-    }
+
+	}
 
 }

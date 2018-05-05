@@ -15,9 +15,11 @@
                 <option ng-repeat="department in departments" value="{{department.DepartmentId}}">{{department.Name}}</option>
             </select>
         </div>
-        <div class="form-group col-sm-4">
-            <label for="inputComputer">Computer</label>
-            <input ng-model="employee.ComputerMake" required type="input" class="form-control" id="InputComputer" aria-describedby="Computer">
+        <label for="selectComputer">Reassign Computer</label>
+        <div class="form-group">
+            <select id="computerDropdown" ng-model="computers.ComputerId">
+                <option ng-repeat="computer in computers" value="{{computer.ComputerId}}">{{computer.Make}}</option>
+            </select>
         </div>
         <div class="btn-group" role="group" aria-label="">
             <button type="button" class="btn btn-primary" ng-click="saveUpdatedEmployee(employee.EmployeeId)">Save</button>

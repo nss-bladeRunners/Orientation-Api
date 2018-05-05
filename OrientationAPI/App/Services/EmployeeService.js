@@ -20,13 +20,36 @@
         });
     };
 
+    const getUnassignedComputers = function () {
+        return $q((resolve, reject) => {
+            $http.get('http://localhost:50482/api/computers/unassigned'), JSON.stringify().then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in getUnassignedComputers in service", err);
+            });
+        });
+    };
 
-    //const updateComputer = function (computerId) {
-    //    return $q((resolve, reject) => {
-    //        $http.put(`http://localhost:50482/api/employees/${employeeId}/computer`), JSON.stringify()
-    //    })
-    //}
+    const deleteComputer = function (computerId) {
+        return $q((resolve, reject) => {
+            $http.delete(`http://localhost:50482/api/computers/${computerId}`).then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in deleteComputer in Service", err);
+            });
+        });
+    };
 
-    return { addEmployee, updateEmployee };
+    const assignComputer = function (employeeId, computerId) {
+        return $q((resolve, reject) => {
+            $http.post(`http://localhost:50482/api/employees/${employeeId}/computer/${computerId}`).then(function (results) {
+                resolve(results);
+            }).catch(function (err) {
+                reject("error in assignComputer in service", err);
+            });
+        });
+    };
+
+    return { addEmployee, updateEmployee, getUnassignedComputers, deleteComputer, assignComputer };
 
 });
