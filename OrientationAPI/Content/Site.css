@@ -1,4 +1,6 @@
-﻿body {
+﻿/* MAIN ELEMENT STYLES */
+
+body {
     padding-top: 51px;
     padding-bottom: 20px;
 }
@@ -22,6 +24,15 @@ textarea {
     opacity: 1;
 }
 
+/* HOMEPAGE STYLES*/
+
+.jumbotron {
+    background-color: darkcyan;
+    color: white;
+}
+
+/* MODAL STYLES*/
+
 .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
     -o-transform: translate(0, 0);
@@ -34,6 +45,7 @@ textarea {
 }
 
 /* TABLE STYLES */
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -67,7 +79,6 @@ th {
     color: #FFF;
 }
 
-
 .main-tbl-div {
     width: 50%;
     padding-top: 41px;
@@ -79,6 +90,7 @@ th {
 }
 
 /* FONT STYLES */
+
 h1 {
     text-align: center;
     margin-top: 20px;
@@ -94,7 +106,6 @@ caption {
 }
 
 /* NAVBAR STYLES */
-
 
 .navbar {
     border-bottom: 1px solid lightblue;
