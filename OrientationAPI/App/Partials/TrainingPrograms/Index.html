@@ -8,16 +8,16 @@
                 <th>Description</th>
                 <th>Start Date</th>
                 <th>End Date</th>
-                <th>Max Attendees</th>
+                <th>Open Seats</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-click="navigateToDetail(program.ProgramId)" ng-repeat="program in programs">
+            <tr class="training-programs-row" ng-click="navigateToDetail(program.ProgramId)" ng-repeat="program in programs">
                 <td>{{program.Name}}</td>
                 <td>{{program.Description}}</td>
                 <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
                 <td>{{program.EndDate | amDateFormat:'MMMM DD YYYY'}}</td>
-                <td>{{program.MaxAttendees}}</td>
+                <td>{{program.RemainingSeats}} of {{program.MaxAttendees}} {{program.RemainingSeats === 0 ? "(Full)" : ""}}</td>
             </tr>
         </tbody>
     </table>

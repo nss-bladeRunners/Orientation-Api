@@ -13,5 +13,7 @@ namespace OrientationAPI.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int MaxAttendees { get; set; }
+        public int AttendeeCount { get; set; }
+        public int RemainingSeats { get { return MaxAttendees - AttendeeCount; } } 
     }
 }
