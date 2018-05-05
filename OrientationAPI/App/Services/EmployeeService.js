@@ -71,6 +71,6 @@
         });
     };
 
-    return { addEmployee, updateEmployee, getUnassignedComputers, deleteComputer, assignComputer };
+    return { addEmployee, updateEmployee, getUnassignedComputers, getAvailableTrainings, deleteComputer, assignComputer, addEmployeeTraining};
 
 });
