@@ -68,7 +68,7 @@ namespace OrientationAPI.Services
             {
                 db.Open();
 
-                var deleteComputer = db.Execute(@"DELETE FROM [dbo].[Computers]
+                var deleteComputer = db.Execute(@"DELETE FROM [dbo].[Employee_Computers]
                                                 WHERE ComputerId = @ComputerId", new {ComputerId});
 
                 return deleteComputer == 1;
