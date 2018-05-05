@@ -23,7 +23,7 @@
 
     //const updateComputer = function (computerId) {
     //    return $q((resolve, reject) => {
-    //        $http.put(`http://localhost:50482/api/employees/${computerId}`)
+    //        $http.put(`http://localhost:50482/api/employees/${employeeId}/computer`), JSON.stringify()
     //    })
     //}
 

@@ -11,7 +11,6 @@
 
         $http.get(`api/employees/employee-details/${$routeParams.id}`).then(function (result) {
             $scope.employee = result.data;
-            console.log($scope.employee);
             if ($scope.employee.TrainingProgramId > 0) { getEmployeeTraining() };
         }).catch(function (err) {
             console.log(err);
@@ -27,6 +26,7 @@
 
         $scope.saveUpdatedEmployee = function () {
             EmployeeService.updateEmployee($scope.employee).then(function () {
+                console.log($scope.employee);
                 $location.path(`/employee-details/${$routeParams.id}`);
             }).catch(function (err) {
                 console.log("erroe in updateTraining in controller", err);

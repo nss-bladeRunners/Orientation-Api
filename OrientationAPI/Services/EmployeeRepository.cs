@@ -60,7 +60,7 @@ namespace OrientationAPI.Services
 			}
 		}
 
-		public int UpdateComputer(Employee employee)
+		public int UpdateComputer(Employee employee, int computerId)
 		{
 			using (var db = new SqlConnection(ConfigurationManager.ConnectionStrings["BRBangazon"].ConnectionString))
 			{
