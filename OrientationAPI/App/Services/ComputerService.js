@@ -34,5 +34,16 @@
          });
      }
 
-     return { addComputer, deleteComputer, getComputerById, updateComputerDetails };
+     const getEmployeeComputer = (computerId) => {
+         return $q((resolve, reject) => {
+             $http.get(`/api/employeeComputers/${computerId}`).then(function (results) {
+                 resolve(results);
+                 if (results) return true;
+             }).catch(function (err) {
+                 reject("error in getEmployeeComputer in service", err);
+             });
+         });
+     }
+
+     return { addComputer, deleteComputer, getComputerById, getEmployeeComputer, updateComputerDetails };
 });

@@ -26,7 +26,6 @@
             $location.url(`Computers`);
         };
 
-
         $scope.computerDetailView = function (computerId) {
             $location.path(`/Computers/Detail/${computerId}`);
         }

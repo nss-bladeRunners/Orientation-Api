@@ -117,8 +117,8 @@
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\Departments\DepartmentController.js" />
     <Content Include="App\Controllers\Departments\DetailController.js" />
-    <Content Include="App\Controllers\ComputerDetailsController.js" />
-    <Content Include="App\Controllers\ComputerViewController.js" />
+    <Content Include="App\Controllers\Computers\ComputerDetailsController.js" />
+    <Content Include="App\Controllers\Computers\ComputerIndexController.js" />
     <Content Include="App\Controllers\Employees\EmployeeAddController.js" />
     <Content Include="App\Controllers\Employees\EmployeeDetailsController.js" />
     <Content Include="App\Controllers\Employees\EmployeeEditController.js" />
@@ -126,14 +126,14 @@
     <Content Include="App\Controllers\HomeController.js" />
     <Content Include="App\Controllers\ModalController.js" />
     <Content Include="App\Controllers\TrainingPrograms\EditController.js" />
-    <Content Include="App\Partials\ComputerDeleteModal.html" />
-    <Content Include="App\Partials\ComputerDetail.html" />
+    <Content Include="App\Partials\Computers\ComputerDeleteModal.html" />
+    <Content Include="App\Partials\Computers\ComputerDetail.html" />
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
-    <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\Computers\ComputersIndex.html" />
     <Content Include="App\Partials\Employees\AddTraining.html" />
     <Content Include="App\Partials\Departments\Detail.html" />
-    <Content Include="App\Partials\ComputersCreate.html" />
+    <Content Include="App\Partials\Computers\ComputerCreate.html" />
     <Content Include="App\Partials\Departments\Index.html" />
     <Content Include="App\Partials\TrainingPrograms\Delete.html" />
     <Content Include="App\Partials\Employees\CreateEmployee.html" />
@@ -222,6 +222,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EmployeeComputer.cs" />
     <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\DepartmentDto.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\EmployeeComputer.cs" />
     <Compile Include="Models\LineItemDto.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDto.cs" />
