@@ -131,6 +131,7 @@
     <Content Include="App\Controllers\TrainingPrograms\IndexController.js" />
     <Content Include="App\Controllers\TrainingPrograms\AddController.js" />
     <Content Include="App\Partials\Computers.html" />
+    <Content Include="App\Partials\Employees\AddTraining.html" />
     <Content Include="App\Partials\Departments\Detail.html" />
     <Content Include="App\Partials\ComputersCreate.html" />
     <Content Include="App\Partials\Departments\Index.html" />
