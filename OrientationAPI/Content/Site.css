@@ -38,7 +38,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 50%;
-    /*max-width: 50%;*/
     border-bottom: none;
 }
 
@@ -53,15 +52,17 @@ th {
 
 .th {
     padding: 10px 30px;
-    background-color: lightseagreen;
+    background-color: cornflowerblue;
     font-size: 1.2em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: #FFF;
 }
 
+
 .main-tbl-div {
     width: 50%;
+    padding-top: 41px;
 }
 
 /* FONT STYLES */
@@ -87,3 +88,8 @@ caption {
     background-color: white;
 }
 
+/* BUTTON STYLES*/
+
+.add-btn {
+    margin-top: 15px;
+}

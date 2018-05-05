@@ -19,6 +19,10 @@
         });
     }();
 
+    $scope.navigateToDepartmentList = function () {
+        $location.path(`/Departments`);
+    };
+
    }
 ]);
 
