@@ -43,6 +43,22 @@ namespace OrientationAPI.Controllers
 			return Request.CreateListRecordsResponse(result);
 		}
 
+        [Route("{employeeId}/availableTrainings"), HttpGet]
+        public HttpResponseMessage GetAvailableTrainings(int employeeId)
+        {
+            var repo = new EmployeeRepository();
+            var result = repo.GetAvailableTrainings(employeeId);
+            return Request.CreateListRecordsResponse(result);
+        }
+
+        [Route("{employeeId}/addTraining/{trainingId}"), HttpPost]
+        public HttpResponseMessage CreateEmployeeTraining(int employeeId, int trainingId)
+        {
+            var repo = new EmployeeRepository();
+            var result = repo.CreateEmployeeTraining(employeeId, trainingId);
+            return Request.CreateAddRecordResponse(result);
+        }
+
 		[Route("{employeeId}"), HttpPut]
 		public HttpResponseMessage UpdateEmployee(Employee employee, int employeeId)
 		{
@@ -50,6 +66,6 @@ namespace OrientationAPI.Controllers
 			var repo = new EmployeeRepository();
 			var result = repo.UpdateEmployee(employee);
 			return Request.CreateUpdateRecordResponse(result);
-		}
-	}
+		}        
+    }
 }

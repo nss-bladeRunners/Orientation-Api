@@ -39,6 +39,12 @@ table {
     border-spacing: 0;
     width: 50%;
     border-bottom: none;
+.training-form-check-input {
+    margin-left: -7px; 
+}
+
+.training-programs-row {
+    cursor:pointer; 
 }
 
 th {
