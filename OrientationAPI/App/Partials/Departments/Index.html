@@ -8,13 +8,13 @@
                 <caption>List of departments</caption>
                 <thead>
                     <tr>
-                        <th scope="col" style="visibility: hidden; border: none !important"></th>
+                        <th scope="col" class="th">ID</th>
                         <th scope="col" class="th">Department</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="department in departments" ng-click="navigateToDetails(department.DepartmentId, employee.EmployeeId)">
-                        <th style="border-top: none !important">{{ $index + 1}}</th>
+                        <td scope="row">{{department.DepartmentId}}</td>
                         <td scope="row">{{department.Name}}</td>
                     </tr>
                 </tbody>
