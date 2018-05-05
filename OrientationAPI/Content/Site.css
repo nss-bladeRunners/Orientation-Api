@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 19px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -51,7 +52,6 @@ th {
 }
 
 .th {
-    /*   border: 1px solid #607ee0; */
     padding: 10px 30px;
     background-color: lightseagreen;
     font-size: 1.2em;
@@ -86,5 +86,4 @@ caption {
     border-bottom: 1px solid lightblue;
     background-color: white;
 }
-
 
