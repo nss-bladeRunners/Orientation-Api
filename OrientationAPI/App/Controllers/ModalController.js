@@ -13,9 +13,7 @@
             modalInstance.result.then(function (result) {
 
             }, function (result) {
-                //if (result === "pin added" || "pin removed") {
-                //    $rootScope.$broadcast("updatePins");
-                //}
+ 
             });
         };
 
