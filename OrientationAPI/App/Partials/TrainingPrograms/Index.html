@@ -1,25 +1,31 @@
 ﻿<div id="trainingPrograms-container" class="container-fluid">
-    <h2>Training Programs</h2>
+    <h1>Training Programs</h1>
+    <h6>Click a training program to edit or delete info</h6>
+    <button ng-click="navigateToAdd()" class="btn btn-primary add-btn offset-md-5">Add Training Program</button>
     <p ng-if="programs.length == 0">No Upcoming Programs</p>
-    <table ng-if="programs.length > 0" id="training-programs-table" class="table table-striped table-bordered table-hover" style="width:100%">
-        <thead>
-            <tr>
-                <th>Program Name</th>
-                <th>Description</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Open Seats</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="training-programs-row" ng-click="navigateToDetail(program.ProgramId)" ng-repeat="program in programs">
-                <td>{{program.Name}}</td>
-                <td>{{program.Description}}</td>
-                <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
-                <td>{{program.EndDate | amDateFormat:'MMMM DD YYYY'}}</td>
-                <td>{{program.RemainingSeats}} of {{program.MaxAttendees}} {{program.RemainingSeats === 0 ? "(Full)" : ""}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <button ng-click="navigateToAdd()" class="btn btn-primary add-btn">Add Training Program</button>
-</div> 
+    <div class="row align-items-center justify-content-center">
+        <div class="training-tbl-div">
+            <table ng-if="programs.length > 0" id="training-programs-table" class="table table-striped table-bordered table-hover" style="width:100%">
+                <caption>List of training programs</caption>
+                <thead>
+                    <tr>
+                        <th class="th">Program Name</th>
+                        <th class="th">Description</th>
+                        <th class="th">Start Date</th>
+                        <th class="th">End Date</th>
+                        <th class="th">Open Seats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="training-programs-row" ng-click="navigateToDetail(program.ProgramId)" ng-repeat="program in programs">
+                        <td>{{program.Name}}</td>
+                        <td>{{program.Description}}</td>
+                        <td>{{program.StartDate | amDateFormat:'MMMM DD YYYY'}}</td>
+                        <td>{{program.EndDate | amDateFormat:'MMMM DD YYYY'}}</td>
+                        <td>{{program.RemainingSeats}} of {{program.MaxAttendees}} {{program.RemainingSeats === 0 ? "(Full)" : ""}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

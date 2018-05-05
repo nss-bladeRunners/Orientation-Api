@@ -1,17 +1,24 @@
 ﻿<div id="departments-container" class="container-fluid">
-    <h2>Departments</h2>
-    <table id="department-table" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th scope="col">Department</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="department in departments"  ng-click="navigateToDetails(department.DepartmentId, employee.EmployeeId)">
-                <td>{{department.Name}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <button ng-click="navigateToAdd()" class="btn btn-primary add-btn">Create Department</button>
-</div> 
-
+    <h1>Bangazon Departments</h1>
+    <h6>Click a department to view a list of currently assigned employees</h6>
+            <button ng-click="navigateToAdd()" class="btn btn-primary add-btn offset-md-5">Add Department</button>
+    <div class="row align-items-center justify-content-center">
+        <div class="main-tbl-div">
+            <table class="table table-striped table-bordered table-hover">
+                <caption>List of departments</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="th">ID</th>
+                        <th scope="col" class="th">Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="department in departments" ng-click="navigateToDetails(department.DepartmentId, employee.EmployeeId)">
+                        <td scope="row">{{department.DepartmentId}}</td>
+                        <td scope="row">{{department.Name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
