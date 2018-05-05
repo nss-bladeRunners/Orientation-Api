@@ -1,5 +1,5 @@
-﻿app.controller("EmployeeDetailsController", ["$scope", "$http", "$location", "$routeParams",
-    function ($scope, $http, $location, $routeParams) {
+﻿app.controller("Employees/EmployeeDetailsController", ["$scope", "$http", "$location", "$q", "$route", "$routeParams", "EmployeeService",
+    function ($scope, $http, $location, $q, $route, $routeParams, EmployeeService) {
 
         $scope.header = "Employee Details";
 
@@ -12,6 +12,7 @@
             });
         };
 
+
         var getEmployeeTraining = function () {
             $http.get(`/api/employees/employee-details/${$routeParams.id}/training`).then(function (result) {
                 $scope.training = result.data;
@@ -23,6 +24,42 @@
         $scope.backToEmployees = function () {
             $location.path('/employees');
         }
+
+
+        //Add Training Stuff 
+
+
+        var getAvailableTrainings = function () {
+            EmployeeService.getAvailableTrainings($routeParams.id).then(function (results) {
+                $scope.programs = results;
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }();
+
+        var selectedTrainingsPromises = function (selectedTrainings) {
+            selectedTrainings.forEach(function (trainingId) {
+                EmployeeService.addEmployeeTraining($routeParams.id, trainingId)
+            });
+        };
+
+        $scope.addSelectedTrainings = function () {
+            var selectedTrainings = getSelectedCheckboxes();
+            if (selectedTrainings.length > 0) {
+                $scope.$dismiss();
+                $q.all(selectedTrainingsPromises(selectedTrainings)).then(function (result) {
+                    $route.reload();
+                });
+            }
+        };
+
+        getSelectedCheckboxes = function () {
+            var selectedTrainings = [];
+            $("input:checkbox[name=training-checkbox]:checked").each(function () {
+                selectedTrainings.push(parseInt($(this).val()));
+            });
+            return selectedTrainings;
+        };
 
         $scope.navigateToEditEmployee = function () {
             $location.path(`/employee-edit/${$routeParams.id}`);

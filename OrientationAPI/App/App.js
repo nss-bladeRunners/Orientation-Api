@@ -21,7 +21,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/employee-details/:id",
         {
             templateUrl: "/app/partials/Employees/EmployeeDetails.html",
-            controller: "EmployeeDetailsController"
+            controller: "Employees/EmployeeDetailsController"
 
         })
         .when("/employee-edit/:id",

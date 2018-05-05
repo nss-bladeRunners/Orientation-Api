@@ -41,6 +41,7 @@
         });
     };
 
+<<<<<<< HEAD
     const getUnassignedComputers = function () {
         return $q((resolve, reject) => {
             $http.get('http://localhost:50482/api/computers/unassigned'), JSON.stringify().then(function (results) {
@@ -72,5 +73,8 @@
     };
 
     return { addEmployee, updateEmployee, getUnassignedComputers, deleteComputer, assignComputer };
+=======
+    return { addEmployee, getAvailableTrainings, addEmployeeTraining };
+>>>>>>> master
 
 });
