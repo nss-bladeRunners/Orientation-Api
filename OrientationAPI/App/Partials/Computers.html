@@ -1,26 +1,23 @@
-﻿<div>
-    <h2>Computers</h2>
+﻿<div id="computers-container" class="container-fluid">
+    <h1>Computers</h1>
+    <h6>Click a computer to edit or delete info</h6>
+    <button class="btn btn-primary add-btn offset-md-5" ng-href="#!/Computers/Create" ng-click="createComputerView()">Add New Computer</button>
+  <div class="row align-items-center justify-content-center">
 
-    <div>
-
-    <button class="btn btn-primary" ng-href="#!/Computers/Create" ng-click="createComputerView()">Add New Computer</button>
-
-    </div>
-
-    <table id="computersDataTable" class="table table-striped table-bordered" style="width:100%">
-
+    <table id="computersDataTable" class="table table-striped table-bordered table-hover" style="width:100%">
+        <caption>List of computers</caption>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Purchase Date</th>
-                <th>Manufacturer</th>
-                <th>Make</th>
+                <th class="th">ID</th>
+                <th class="th">Purchase Date</th>
+                <th class="th">Manufacturer</th>
+                <th class="th">Make</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr ng-repeat="computer in computers | orderBy:'-PurchaseDate'" >
-                <td><a ng-href="#!/Computers/Detail/{{computer.ComputerId}}" ng-click="selectComputer(computer.ComputerId)">{{computer.ComputerId}}</a></td>
+            <tr class="computer-row" ng-repeat="computer in computers | orderBy:'-PurchaseDate'" ng-click="computerDetailView(computer.ComputerId)">
+                <td>{{computer.ComputerId}}</a></td>
                 <td>{{computer.PurchaseDate | date:'MM/dd/yyyy'}}</td>
                 <td>{{computer.Manufacturer}}</td>
                 <td>{{computer.Make}}</td>
@@ -29,4 +26,5 @@
 
     </table>
 
+</div>
 </div>
