@@ -67,5 +67,20 @@ namespace OrientationAPI.Controllers
 			var result = repo.UpdateEmployee(employee);
 			return Request.CreateUpdateRecordResponse(result);
 		}        
+
+		[Route("{employeeId}/computer/{computerId}"),HttpPost]
+		public HttpResponseMessage UpdateEmployeeComputer(int employeeId, int computerId)
+		{
+			var repo = new EmployeeRepository();
+			var result = repo.UpdateComputer(employeeId, computerId);
+			return Request.CreateAddRecordResponse(result);
+		}
+
+		[Route("{employeeId}/deleteTraiking/{trainingId}"), HttpDelete]
+		public HttpResponseMessage DeleteEmployeeTraining(Employee employee, int employeeId)
+		{
+			throw new NotImplementedException(); 
+		}
+
     }
 }
