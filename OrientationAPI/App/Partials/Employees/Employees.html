@@ -1,4 +1,4 @@
-﻿<h2>{{header}}</h2>
+﻿<!--<h2>{{header}}</h2>
 
 <table class="table table-striped">
     <thead>
@@ -21,6 +21,33 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table>-->
 
-<button ng-click="navigateToCreateEmployee()" class="btn btn-primary add-btn">Add Employee</button>
+<div id="employees-container" class="container-fluid">
+    <h1>Bangazon Employees</h1>
+    <h6>Click an employee to view more employee info</h6>
+    <button ng-click="navigateToCreateEmployee()" class="btn btn-primary add-btn offset-md-5">Add Employee</button>
+    <div class="row align-items-center justify-content-center">
+        <div class="employee-tbl-div">
+            <table class="table table-striped table-bordered table-hover">
+                <caption>List of employees</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="th">First</th>
+                        <th scope="col" class="th">Last</th>
+                        <th scope="col" class="th">Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="department in departments" ng-click="navigateToDetails(department.DepartmentId, employee.EmployeeId)">
+
+                    <tr ng-repeat="employee in employees" ng-click="employeeDetails(employee.EmployeeId)">
+                        <td>{{employee.FirstName}}</td>
+                        <td>{{employee.LastName}}</td>
+                        <td>{{employee.DepartmentName}}</td>  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

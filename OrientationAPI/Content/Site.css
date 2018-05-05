@@ -89,8 +89,17 @@ th {
     padding-top: 41px;
 }
 
-/* FONT STYLES */
+.employee-tbl-div {
+    width: 75%;
+    padding-top: 41px;
+}
 
+.employee-edit-tbl-div {
+    width: 25%;
+    padding-top: 41px;
+}
+
+/* FONT STYLES */
 h1 {
     text-align: center;
     margin-top: 20px;
@@ -103,6 +112,10 @@ h6 {
 
 caption {
     text-align: center;
+}
+
+.employee-title {
+    text-align: left;
 }
 
 /* NAVBAR STYLES */
