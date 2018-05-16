@@ -89,6 +89,14 @@ namespace OrientationAPI.Services
             }
         }
 
+        public List<EmployeeComputer> GetAllByEmployeeComputersByComputerId(int computerId)
+        {
+            using (var db = GetDb())
+            {
+                db.Open();
+                return db.Query<EmployeeComputer>("SELECT * FROM Employee_Computers WHERE ComputerId = @computerId",new {computerId}).ToList();
+            }
+        }
 
     }
 }

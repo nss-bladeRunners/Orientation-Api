@@ -1,0 +1,26 @@
+﻿<div ng-controller="ComputerDetailCtrl" id="computer-delete">
+    
+    <div class="modal-header">
+        <h3 class="modal-title">Whoa!</h3>
+    </div>
+
+    <div class="modal-body">
+       
+        <div>
+            <p>Are you sure you want to delete this computer?</p>
+            <p>ID: <strong>{{computer.ComputerId}}</strong></p>
+            <p>Manufacturer: <strong>{{computer.Manufacturer}}</strong></p>
+            <p>Make: <strong>{{computer.Make}}</strong></p>
+            <p>Purchased On: <strong>{{computer.PurchaseDate | date:'MM/dd/yyyy'}}?</strong></p>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" ng-click="deleteComputer(computer.ComputerId)">Delete</button>
+            <button class="btn btn-secondary" ng-click="$dismiss('canceled')">Cancel</button>
+        </div>
+
+        <div ng-show="computerAssigned">Computer is curently assigned to an employee and connot be deleted.</div>
+
+    </div>
+
+</div>

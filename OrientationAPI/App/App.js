@@ -68,15 +68,15 @@ app.config(["$routeProvider", function ($routeProvider) {
 
         
         .when("/Computers", {
-            templateUrl: "/app/partials/Computers.html",
+            templateUrl: "/app/partials/Computers/ComputersIndex.html",
             controller: "ComputerViewCtrl"
         })
         .when("/Computers/Create", {
-            templateUrl: "/app/partials/ComputersCreate.html",
+            templateUrl: "/app/partials/Computers/ComputerCreate.html",
             controller: "ComputerViewCtrl"
         })
         .when("/Computers/Detail/:computerId", {
-            templateUrl: "/app/partials/ComputerDetail.html",
+            templateUrl: "/app/partials/Computers/ComputerDetail.html",
             controller: "ComputerDetailCtrl"
         })
 

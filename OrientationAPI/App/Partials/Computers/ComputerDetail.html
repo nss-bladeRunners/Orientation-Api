@@ -20,10 +20,9 @@
         </div>
 
         <div class="row">
+            <button ng-click="updateComputer(computer)" class=" btn btn-primary col-md-1">Save</button>
             <button ng-click="navigateToList()" class="btn btn-secondary col-md-1">Cancel</button>
-            <button ng-click="updateComputer(computer)" class=" btn btn-success col-md-1">Save</button>
-            <button ng-click="deleteComputer(computer.ComputerId)" class="btn btn-danger col-md-2 offset-1">Delete Computer</button>
-
+            <button ng-hide="!assigned === false" ng-click="launchModal('App/Partials/ComputerDeleteModal.html','ComputerDetailCtrl')" class="btn btn-danger col-md-2 offset-1" ng-controller="ModalController">Delete Computer</button>
         </div>
 
     </form>

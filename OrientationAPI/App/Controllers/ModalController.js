@@ -7,15 +7,13 @@
             var modalInstance = $uibModal.open({
                 templateUrl: template,
                 controller: controller,
-                scope: $scope,
+                scope: $scope
             });
 
             modalInstance.result.then(function (result) {
 
             }, function (result) {
-                //if (result === "pin added" || "pin removed") {
-                //    $rootScope.$broadcast("updatePins");
-                //}
+ 
             });
         };
 
